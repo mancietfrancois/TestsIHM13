@@ -38,7 +38,7 @@ public class TestNotification {
         if (SystemTray.isSupported()) {
 
             SystemTray tray = SystemTray.getSystemTray();
-            Image image = Toolkit.getDefaultToolkit().getImage("U:\\cadis.gif");
+            Image image = Toolkit.getDefaultToolkit().getImage("./images/iconBarre.png");
 
             MouseListener mouseListener = new MouseListener() {
                 public void mouseClicked(MouseEvent e) {
