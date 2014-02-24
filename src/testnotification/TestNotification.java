@@ -4,37 +4,11 @@
  */
 package testnotification;
 
-import java.awt.AWTException;
-import java.awt.CheckboxMenuItem;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Frame;
-import java.awt.GraphicsConfiguration;
-import java.awt.GraphicsEnvironment;
-import java.awt.Image;
-import java.awt.Insets;
-import java.awt.MenuItem;
-import java.awt.PopupMenu;
-import java.awt.SystemTray;
-import java.awt.Toolkit;
-import java.awt.TrayIcon;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.AbstractButton;
-import javax.swing.JButton;
-import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import static testnotification.TestNotification.barVisible;
-import static testnotification.TestNotification.frame;
-import static testnotification.TestNotification.popup;
-import static testnotification.TestNotification.removeMinMaxClose;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import static testnotification.TestNotification.*;
+import testparamgen.TestBar;
 
 /**
  *
@@ -46,8 +20,8 @@ public class TestNotification {
      * @param args the command line arguments
      */
     public static CheckboxMenuItem barVisible;
-    public static PopupMenu popup;
-    public static JFrame frame;
+    public static JPopupMenu popup;
+    public static TestBar t;
     private static ActionListener actionListener;
 
     public static void main(String[] args) {
@@ -66,46 +40,58 @@ public class TestNotification {
 
         System.out.println();
 
-        frame = new JFrame("");
-        frame.setSize(500, 500);
-        frame.setLocation(xPopup, yPopup);
-        frame.setResizable(true);
-        JPanel borderedPanel = new JPanel();
-        removeMinMaxClose(frame);
-        frame.setVisible(false);
-        
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        t = new TestBar();
+        t.setSize(500, 500);
+        t.setLocation(xPopup, yPopup);
+        t.setResizable(true);
+        removeMinMaxClose(t);
+        t.setVisible(false);
+
         if (SystemTray.isSupported()) {
 
             SystemTray tray = SystemTray.getSystemTray();
-            Image image = Toolkit.getDefaultToolkit().getImage("U:\\cadis.gif");
+            Image image = Toolkit.getDefaultToolkit().getImage("./images/iconBarre.png");
 
             MouseListener mouseListener = new MouseListener() {
+
+                @Override
                 public void mouseClicked(MouseEvent e) {
                     if (e.getButton() == MouseEvent.BUTTON1) {
-                        frame.setVisible(true);
+                        if (t.isVisible()) {
+                            t.setVisible(false);
+                        } else {
+                            t.setVisible(true);
+                        }
                         //popup.show(frame, e.getXOnScreen(), e.getYOnScreen());
                     }
                     System.out.println("Tray Icon - Mouse clicked!");
                 }
 
+                @Override
                 public void mouseEntered(MouseEvent e) {
                     System.out.println("Tray Icon - Mouse entered!");
                 }
 
+                @Override
                 public void mouseExited(MouseEvent e) {
                     System.out.println("Tray Icon - Mouse exited!");
                 }
 
+                @Override
                 public void mousePressed(MouseEvent e) {
                     System.out.println("Tray Icon - Mouse pressed!");
                 }
 
+                @Override
                 public void mouseReleased(MouseEvent e) {
                     System.out.println("Tray Icon - Mouse released!");
                 }
             };
 
             ActionListener exitListener = new ActionListener() {
+
+                @Override
                 public void actionPerformed(ActionEvent e) {
                     System.out.println("Exiting...");
                     System.exit(0);
@@ -113,6 +99,7 @@ public class TestNotification {
             };
 
             ItemListener changeStateBarListener = new ItemListener() {
+
                 public void actionPerformed(ActionEvent e) {
                     System.out.println("fdtyh");
                     System.out.println(barVisible.getState());
@@ -126,24 +113,27 @@ public class TestNotification {
                 }
             };
 
-            popup = new PopupMenu();
-            MenuItem defaultItem = new MenuItem("Exit");
+            popup = new JPopupMenu();
+            JMenuItem defaultItem = new JMenuItem("Exit", new ImageIcon("./images/iconBarre.png"));
             defaultItem.addActionListener(exitListener);
             popup.add(defaultItem);
 
             barVisible = new CheckboxMenuItem("Afficher Barre");
             barVisible.addItemListener((ItemListener) changeStateBarListener);
-            popup.add(barVisible);
+            //popup.add(barVisible);
+            trayIcon = new TrayIcon(image, "Tray Demo", null);
 
-            trayIcon = new TrayIcon(image, "Tray Demo", popup);
+            trayIcon.addMouseListener(new MouseAdapter() {
 
-            ActionListener actionItemListener = new ActionListener() {
-                public void actionPerformed(ActionEvent e) {
-                    trayIcon.displayMessage("Action Event",
-                            "An Action Event Has Been Performed!",
-                            TrayIcon.MessageType.INFO);
+                @Override
+                public void mouseReleased(MouseEvent e) {
+                    popup.setLocation(e.getX(), e.getY());
+                    popup.setInvoker(popup);
+                    popup.setVisible(true);
                 }
-            };
+            });
+
+
 
             trayIcon.setImageAutoSize(true);
             trayIcon.addActionListener(actionListener);
@@ -161,20 +151,32 @@ public class TestNotification {
     }
 
     // Ca à pas l'air de fonctionner
-    public static void removeMinMaxClose(Component comp) {
-        if (comp instanceof JButton) {
-            String accName = ((JButton) comp).getAccessibleContext().getAccessibleName();
-            System.out.println(accName);
-            if (accName.equals("Maximize") || accName.equals("Iconify")
-                    || accName.equals("Close")) {
-                comp.getParent().remove(comp);
-            }
-        }
-        if (comp instanceof Container) {
-            Component[] comps = ((Container) comp).getComponents();
-            for (int x = 0, y = comps.length; x < y; x++) {
-                removeMinMaxClose(comps[x]);
-            }
+    public static void removeMinMaxClose(JFrame comp) {
+        /*
+         * if (comp instanceof JButton) { String accName = ((JButton)
+         * comp).getAccessibleContext().getAccessibleName();
+         * System.out.println(accName); if (accName.equals("Maximize") ||
+         * accName.equals("Iconify") || accName.equals("Close")) {
+         * comp.getParent().remove(comp); } } if (comp instanceof Container) {
+         * Component[] comps = ((Container) comp).getComponents(); for (int x =
+         * 0, y = comps.length; x < y; x++) { removeMinMaxClose(comps[x]); } }
+         */
+
+
+
+        try {
+            // Set System L&F
+            UIManager.setLookAndFeel(
+                    UIManager.getSystemLookAndFeelClassName());
+            SwingUtilities.updateComponentTreeUI(comp);
+        } catch (UnsupportedLookAndFeelException e) {
+            // handle exception
+        } catch (ClassNotFoundException e) {
+            // handle exception
+        } catch (InstantiationException e) {
+            // handle exception
+        } catch (IllegalAccessException e) {
+            // handle exception
         }
     }
 }
