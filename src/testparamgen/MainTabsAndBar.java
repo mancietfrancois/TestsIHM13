@@ -6,12 +6,8 @@ package testparamgen;
 
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import com.sun.java.swing.plaf.windows.WindowsLookAndFeel;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
 import javax.swing.JFrame;
 import javax.swing.UnsupportedLookAndFeelException;
-import static java.awt.GraphicsDevice.WindowTranslucency.*;
 
 /**
  *
