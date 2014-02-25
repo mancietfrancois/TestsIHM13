@@ -29,19 +29,20 @@ public class TabsParam extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         String[] nomParams = new String[]{"Général", "Barre d'outils", "Claviers & clis",
             "Commandes VITIPI", "Complétion", "Dictionnaires", "Feedbacks", "Profils"};
-      
+        Param[] params = new Param[]{new panelGeneral(),new panelToolBar(),new panelKeyboard(),new panelCommandes()
+        ,new panelCompletion(),new panelDicos(),new panelFeedbacks(),new panelDicos()};
+        
         int i = 0;
         for (String s : nomParams) {
+            
+            tabbedPane.addTab(s, tabIcon, params[i]);
             i++;
-            tabbedPane.addTab(s, tabIcon, makeTextPanel("Panel"+i));
         }
-
        
-
         tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);      
 
         tabbedPane.setTabPlacement(JTabbedPane.LEFT);
-        setSize(410, 500);
+        setSize(700, 500);
         //Add the tabbed pane to this panel.
         add(tabbedPane);
 
@@ -51,12 +52,14 @@ public class TabsParam extends JFrame {
     }
 
     protected JPanel makeTextPanel(String text) {
-        JPanel panel = new JPanel(false);
+        /*
+         JPanel panel = new JPanel(false);
         JLabel filler = new JLabel(text);
         filler.setHorizontalAlignment(JLabel.CENTER);
         panel.setLayout(new GridLayout(1, 1));
         panel.add(filler);
-        return panel;
+        */
+        return new panelToolBar();
     }
 
     /**
