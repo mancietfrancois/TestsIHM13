@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.BorderFactory;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -49,17 +50,20 @@ public class TestNotification {
             ActionListener exitListener = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    System.out.println("Exiting...");
-                    System.exit(0);
+                    popup.setVisible(false);
                 }
             };
             popup = new JPopupMenu();
+            popup.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
             for (int i = 0; i < 5; i++) {
                 JMenuItem defaultItem = new JMenuItem("", null);
-                MenuItemCustomWithCheckbox p = new MenuItemCustomWithCheckbox("Dictionnaire", new ImageIcon("./images/iconBarre.png"), Color.GREEN);
+                MenuItemCustomWithCheckbox p = new MenuItemCustomWithCheckbox("Dictionnaire",
+                        new ImageIcon("./images/iconBarre.png"), Color.GREEN);
+                p.addActionListener(exitListener);
                 defaultItem.setPreferredSize(p.getPreferredSize());
                 defaultItem.add(p);
+                defaultItem.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
                 defaultItem.addActionListener(exitListener);
                 popup.add(defaultItem);
             }
