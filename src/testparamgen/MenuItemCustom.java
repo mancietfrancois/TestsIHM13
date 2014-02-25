@@ -4,7 +4,9 @@
  */
 package testparamgen;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -15,8 +17,11 @@ public class MenuItemCustom extends javax.swing.JPanel {
     /**
      * Creates new form MenuItemCustom
      */
-    public MenuItemCustom() {
+    public MenuItemCustom(String name, ImageIcon icon, Color color) {
         initComponents();
+        jLabel1.setText(name);
+        jLabel2.setIcon(icon);
+        jPanel2.setBackground(color);
     }
 
     /**
@@ -33,8 +38,8 @@ public class MenuItemCustom extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        setMaximumSize(new java.awt.Dimension(190, 40));
-        setMinimumSize(new java.awt.Dimension(190, 40));
+        setMaximumSize(new java.awt.Dimension(250, 55));
+        setMinimumSize(new java.awt.Dimension(250, 55));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 0));
 
@@ -46,11 +51,15 @@ public class MenuItemCustom extends javax.swing.JPanel {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Myriad Pro", 0, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jLabel1.setText("jLabel1");
+
+        jLabel2.setMaximumSize(new java.awt.Dimension(50, 50));
+        jLabel2.setMinimumSize(new java.awt.Dimension(50, 50));
+        jLabel2.setName(""); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -59,18 +68,19 @@ public class MenuItemCustom extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1))
+                .addComponent(jLabel1)
+                .addContainerGap(27, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -81,6 +91,6 @@ public class MenuItemCustom extends javax.swing.JPanel {
     
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(190, 40);
+        return new Dimension(252, 55);
     }
 }
