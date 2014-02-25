@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.beans.PropertyChangeSupport;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 
 /**
@@ -19,22 +19,30 @@ import javax.swing.ImageIcon;
  */
 public class MenuItemCustomWithCheckbox extends javax.swing.JPanel {
     
-    private static final Color DEFAULT_FOCUSED_COLOR = Color.BLUE;
+    private static final Color DEFAULT_FOCUSED_COLOR = new Color(228, 239, 243);
+    private static final Color DEFAULT_FOCUSED_BORDER_COLOR = new Color(168, 216, 235);
     private static final Color DEFAULT_COLOR = new Color(240, 240, 240, 255);
-
+    
+    private static final String CHECKBOX_EMPTY_IMAGE_PATH = "./images/checkbox/checkbox-empty_small.png";
+    private static final String CHECKBOX_SELECTED_IMAGE_PATH = "./images/checkbox/checkbox-ticked_small.png";
+    
+    private static final Dimension DEFAULT_CHECKBOX_SIZE = new Dimension(21, 21);
+    private static final Dimension DEFAULT_ILLUSTRATION_SIZE = new Dimension(50, 50);
+    private static final Dimension DEFAULT_COLOR_PANEL_SIZE = new Dimension(13, 54);
+    private static final Dimension DEFAULT_PANEL_SIZE = new Dimension(276, 55);
+    
     /**
      * Creates new form MenuItemCustom
      */
     public MenuItemCustomWithCheckbox(String name, ImageIcon icon, Color color) {
         initComponents();
-        jCheckBox1.setIcon(new ImageIcon("./images/checkbox/checkbox-empty_small.png"));
-        jCheckBox1.setSelectedIcon(new ImageIcon("./images/checkbox/checkbox-ticked_small.png"));
-        jCheckBox1.setSize(21, 21);
+        setComponentsPreferredSize();
+        jCheckBox1.setIcon(new ImageIcon(CHECKBOX_EMPTY_IMAGE_PATH));
+        jCheckBox1.setSelectedIcon(new ImageIcon(CHECKBOX_SELECTED_IMAGE_PATH));
         jLabelNomItem.setText(name);
         illustrationOption.setIcon(icon);
-        illustrationOption.setSize(50, 50);
         jPanelBorderColor.setBackground(color);
-        jPanelBorderColor.setSize(13, 54);
+        
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -47,14 +55,12 @@ public class MenuItemCustomWithCheckbox extends javax.swing.JPanel {
             }
             
             @Override
-            public void mousePressed(MouseEvent e) {
-                setFocusOnPanel(false);
+            public void mouseClicked(MouseEvent e) {
                 if (jCheckBox1.isSelected()) {
                     jCheckBox1.setSelected(false);
                 } else {
                     jCheckBox1.setSelected(true);
                 }
-                fireActionPerformed();
             }
         });
     }
@@ -150,15 +156,23 @@ public class MenuItemCustomWithCheckbox extends javax.swing.JPanel {
 
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(276, 55);
+        return DEFAULT_PANEL_SIZE;
     }
 
+    private void setComponentsPreferredSize() {
+        jCheckBox1.setPreferredSize(DEFAULT_CHECKBOX_SIZE);
+        jPanelBorderColor.setPreferredSize(DEFAULT_COLOR_PANEL_SIZE);
+        illustrationOption.setSize(DEFAULT_ILLUSTRATION_SIZE);
+    }
+    
     private void setFocusOnPanel(boolean isFocused) {
         if (isFocused) {
             this.setBackground(DEFAULT_FOCUSED_COLOR);
+            this.setBorder(BorderFactory.createLineBorder(DEFAULT_FOCUSED_BORDER_COLOR, 1, true));
             this.jCheckBox1.setBackground(DEFAULT_FOCUSED_COLOR);
         } else {
             this.setBackground(DEFAULT_COLOR);
+            this.setBorder(BorderFactory.createEmptyBorder());
             this.jCheckBox1.setBackground(DEFAULT_COLOR);
         }
         this.validate();
