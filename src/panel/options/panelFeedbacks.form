@@ -56,35 +56,35 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
+                              <Component id="rad_oralPara" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                              <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                              <Component id="rad_oralMot" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="rad_oralLettre" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="rand_sonLettre" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rad_aucunLettre" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jRadioButton5" min="-2" max="-2" attributes="0"/>
+                              <Component id="rad_sonMot" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
+                              <Component id="rad_aucunMot" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
+                              <Component id="rad_sonPara" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
+                              <Component id="rad_aucunPara" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="137" max="32767" attributes="0"/>
@@ -97,23 +97,23 @@
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rand_sonLettre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rad_aucunLettre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rad_oralLettre" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rad_oralMot" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rad_sonMot" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rad_aucunMot" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jRadioButton9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rad_oralPara" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rad_sonPara" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rad_aucunPara" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="131" max="32767" attributes="0"/>
                   </Group>
@@ -136,7 +136,7 @@
                 <Property name="text" type="java.lang.String" value="PARAGRAPHE :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+            <Component class="javax.swing.JRadioButton" name="rad_oralLettre">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupLettre"/>
@@ -144,7 +144,7 @@
                 <Property name="text" type="java.lang.String" value="Lecture orale"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+            <Component class="javax.swing.JRadioButton" name="rand_sonLettre">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupLettre"/>
@@ -152,7 +152,7 @@
                 <Property name="text" type="java.lang.String" value="Son"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+            <Component class="javax.swing.JRadioButton" name="rad_aucunLettre">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupLettre"/>
@@ -160,7 +160,7 @@
                 <Property name="text" type="java.lang.String" value="Aucun"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+            <Component class="javax.swing.JRadioButton" name="rad_oralMot">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupMot"/>
@@ -168,10 +168,10 @@
                 <Property name="text" type="java.lang.String" value="Lecture orale"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rad_oralMotActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton5">
+            <Component class="javax.swing.JRadioButton" name="rad_sonMot">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupMot"/>
@@ -179,7 +179,7 @@
                 <Property name="text" type="java.lang.String" value="Son"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton6">
+            <Component class="javax.swing.JRadioButton" name="rad_aucunMot">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupMot"/>
@@ -187,7 +187,7 @@
                 <Property name="text" type="java.lang.String" value="Aucun"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton7">
+            <Component class="javax.swing.JRadioButton" name="rad_oralPara">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupParagraphe"/>
@@ -195,7 +195,7 @@
                 <Property name="text" type="java.lang.String" value="Lecture orale"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton8">
+            <Component class="javax.swing.JRadioButton" name="rad_sonPara">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupParagraphe"/>
@@ -203,7 +203,7 @@
                 <Property name="text" type="java.lang.String" value="Son"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton9">
+            <Component class="javax.swing.JRadioButton" name="rad_aucunPara">
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="buttonGroupParagraphe"/>

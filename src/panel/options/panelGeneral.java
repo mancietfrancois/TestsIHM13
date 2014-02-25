@@ -36,23 +36,23 @@ public class panelGeneral extends Param {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox();
+        chk_demarrage = new javax.swing.JCheckBox();
+        cmb_profilDefaut = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        chk_afficheBarre = new javax.swing.JCheckBox();
 
-        jCheckBox1.setText("Lancement au démarrage de VITIPI");
+        chk_demarrage.setText("Lancement au démarrage de VITIPI");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Défaut", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cmb_profilDefaut.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Défaut", "Item 2", "Item 3", "Item 4" }));
+        cmb_profilDefaut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cmb_profilDefautActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Profil par défaut :");
 
-        jCheckBox2.setText("Afficher la barre d'outils");
+        chk_afficheBarre.setText("Afficher la barre d'outils");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -61,36 +61,36 @@ public class panelGeneral extends Param {
             .addGroup(layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox1)
+                    .addComponent(chk_afficheBarre)
+                    .addComponent(chk_demarrage)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cmb_profilDefaut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(190, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(jCheckBox1)
+                .addComponent(chk_demarrage)
                 .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_profilDefaut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                .addComponent(jCheckBox2)
+                .addComponent(chk_afficheBarre)
                 .addGap(64, 64, 64))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cmb_profilDefautActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_profilDefautActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cmb_profilDefautActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JCheckBox chk_afficheBarre;
+    private javax.swing.JCheckBox chk_demarrage;
+    private javax.swing.JComboBox cmb_profilDefaut;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     }

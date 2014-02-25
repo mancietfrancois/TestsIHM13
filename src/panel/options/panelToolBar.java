@@ -39,20 +39,20 @@ public class panelToolBar extends Param {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        cmb_contraste = new javax.swing.JComboBox();
+        lbl_taillePetit = new javax.swing.JLabel();
+        lbl_tailleMoyen = new javax.swing.JLabel();
+        lbl_tailleGrand = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lbl_dico = new javax.swing.JLabel();
+        lbl_clavierVirtuel = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lbl_lecture = new javax.swing.JLabel();
+        lbl_lectureMot = new javax.swing.JLabel();
+        lbl_lecturePhrase = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(450, 300));
 
@@ -60,31 +60,32 @@ public class panelToolBar extends Param {
 
         jLabel2.setText("Contrastes :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmb_contraste.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel3.setText("petits");
+        lbl_taillePetit.setText("petits");
 
-        jLabel4.setText("moyens");
+        lbl_tailleMoyen.setText("moyens");
 
-        jLabel5.setText("grands");
+        lbl_tailleGrand.setText("grands");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Environnment");
 
-        jLabel7.setText("Dictionnaires");
+        lbl_dico.setIcon(new javax.swing.ImageIcon("C:\\Users\\legranma\\Documents\\NetBeansProjects\\TestsIHM13\\images\\menu_discret\\Vitipi_Dictionnaire.gif")); // NOI18N
+        lbl_dico.setText("Dictionnaires");
 
-        jLabel8.setText("Claviers virtuels");
+        lbl_clavierVirtuel.setText("Claviers virtuels");
 
         jLabel9.setForeground(new java.awt.Color(153, 153, 153));
         jLabel9.setText("Relecture");
 
-        jLabel10.setText("Play");
+        lbl_lecture.setText("Play");
 
-        jLabel11.setText("Play Mot");
+        lbl_lectureMot.setText("Play Mot");
 
-        jLabel12.setText("Play Phrase");
+        lbl_lecturePhrase.setText("Play Phrase");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,16 +99,16 @@ public class panelToolBar extends Param {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
+                                .addComponent(lbl_dico)
                                 .addGap(52, 52, 52)
-                                .addComponent(jLabel8))
+                                .addComponent(lbl_clavierVirtuel))
                             .addComponent(jLabel9)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
+                                .addComponent(lbl_lecture)
                                 .addGap(90, 90, 90)
-                                .addComponent(jLabel11)
+                                .addComponent(lbl_lectureMot)
                                 .addGap(52, 52, 52)
-                                .addComponent(jLabel12)))
+                                .addComponent(lbl_lecturePhrase)))
                         .addGap(0, 156, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -119,18 +120,18 @@ public class panelToolBar extends Param {
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(lbl_dico)
+                    .addComponent(lbl_clavierVirtuel))
                 .addGap(34, 34, 34)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12))
-                .addGap(0, 74, Short.MAX_VALUE))
+                    .addComponent(lbl_lecture)
+                    .addComponent(lbl_lectureMot)
+                    .addComponent(lbl_lecturePhrase))
+                .addGap(0, 42, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -144,16 +145,16 @@ public class panelToolBar extends Param {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmb_contraste, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(69, 69, 69))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
+                        .addComponent(lbl_taillePetit)
                         .addGap(34, 34, 34)
-                        .addComponent(jLabel4)
+                        .addComponent(lbl_tailleMoyen)
                         .addGap(34, 34, 34)
-                        .addComponent(jLabel5)
+                        .addComponent(lbl_tailleGrand)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -163,33 +164,33 @@ public class panelToolBar extends Param {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(lbl_taillePetit)
+                    .addComponent(lbl_tailleMoyen)
+                    .addComponent(lbl_tailleGrand))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmb_contraste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox cmb_contraste;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lbl_clavierVirtuel;
+    private javax.swing.JLabel lbl_dico;
+    private javax.swing.JLabel lbl_lecture;
+    private javax.swing.JLabel lbl_lectureMot;
+    private javax.swing.JLabel lbl_lecturePhrase;
+    private javax.swing.JLabel lbl_tailleGrand;
+    private javax.swing.JLabel lbl_tailleMoyen;
+    private javax.swing.JLabel lbl_taillePetit;
     // End of variables declaration//GEN-END:variables
     }
 }

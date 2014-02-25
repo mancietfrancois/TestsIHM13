@@ -44,15 +44,15 @@ public class panelFeedbacks extends Param {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton9 = new javax.swing.JRadioButton();
+        rad_oralLettre = new javax.swing.JRadioButton();
+        rand_sonLettre = new javax.swing.JRadioButton();
+        rad_aucunLettre = new javax.swing.JRadioButton();
+        rad_oralMot = new javax.swing.JRadioButton();
+        rad_sonMot = new javax.swing.JRadioButton();
+        rad_aucunMot = new javax.swing.JRadioButton();
+        rad_oralPara = new javax.swing.JRadioButton();
+        rad_sonPara = new javax.swing.JRadioButton();
+        rad_aucunPara = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -70,37 +70,37 @@ public class panelFeedbacks extends Param {
 
         jLabel3.setText("PARAGRAPHE :");
 
-        buttonGroupLettre.add(jRadioButton1);
-        jRadioButton1.setText("Lecture orale");
+        buttonGroupLettre.add(rad_oralLettre);
+        rad_oralLettre.setText("Lecture orale");
 
-        buttonGroupLettre.add(jRadioButton2);
-        jRadioButton2.setText("Son");
+        buttonGroupLettre.add(rand_sonLettre);
+        rand_sonLettre.setText("Son");
 
-        buttonGroupLettre.add(jRadioButton3);
-        jRadioButton3.setText("Aucun");
+        buttonGroupLettre.add(rad_aucunLettre);
+        rad_aucunLettre.setText("Aucun");
 
-        buttonGroupMot.add(jRadioButton4);
-        jRadioButton4.setText("Lecture orale");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroupMot.add(rad_oralMot);
+        rad_oralMot.setText("Lecture orale");
+        rad_oralMot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                rad_oralMotActionPerformed(evt);
             }
         });
 
-        buttonGroupMot.add(jRadioButton5);
-        jRadioButton5.setText("Son");
+        buttonGroupMot.add(rad_sonMot);
+        rad_sonMot.setText("Son");
 
-        buttonGroupMot.add(jRadioButton6);
-        jRadioButton6.setText("Aucun");
+        buttonGroupMot.add(rad_aucunMot);
+        rad_aucunMot.setText("Aucun");
 
-        buttonGroupParagraphe.add(jRadioButton7);
-        jRadioButton7.setText("Lecture orale");
+        buttonGroupParagraphe.add(rad_oralPara);
+        rad_oralPara.setText("Lecture orale");
 
-        buttonGroupParagraphe.add(jRadioButton8);
-        jRadioButton8.setText("Son");
+        buttonGroupParagraphe.add(rad_sonPara);
+        rad_sonPara.setText("Son");
 
-        buttonGroupParagraphe.add(jRadioButton9);
-        jRadioButton9.setText("Aucun");
+        buttonGroupParagraphe.add(rad_aucunPara);
+        rad_aucunPara.setText("Aucun");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,29 +112,29 @@ public class panelFeedbacks extends Param {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton7))
+                        .addComponent(rad_oralPara))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(56, 56, 56)
-                        .addComponent(jRadioButton4))
+                        .addComponent(rad_oralMot))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton1)))
+                        .addComponent(rad_oralLettre)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButton2)
+                        .addComponent(rand_sonLettre)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton3))
+                        .addComponent(rad_aucunLettre))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButton5)
+                        .addComponent(rad_sonMot)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton6))
+                        .addComponent(rad_aucunMot))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButton8)
+                        .addComponent(rad_sonPara)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton9)))
+                        .addComponent(rad_aucunPara)))
                 .addContainerGap(137, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -143,21 +143,21 @@ public class panelFeedbacks extends Param {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton1))
+                    .addComponent(rand_sonLettre)
+                    .addComponent(rad_aucunLettre)
+                    .addComponent(rad_oralLettre))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6))
+                    .addComponent(rad_oralMot)
+                    .addComponent(rad_sonMot)
+                    .addComponent(rad_aucunMot))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jRadioButton7)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jRadioButton9))
+                    .addComponent(rad_oralPara)
+                    .addComponent(rad_sonPara)
+                    .addComponent(rad_aucunPara))
                 .addContainerGap(131, Short.MAX_VALUE))
         );
 
@@ -254,9 +254,9 @@ public class panelFeedbacks extends Param {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void rad_oralMotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rad_oralMotActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+    }//GEN-LAST:event_rad_oralMotActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -274,21 +274,21 @@ public class panelFeedbacks extends Param {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JRadioButton rad_aucunLettre;
+    private javax.swing.JRadioButton rad_aucunMot;
+    private javax.swing.JRadioButton rad_aucunPara;
+    private javax.swing.JRadioButton rad_oralLettre;
+    private javax.swing.JRadioButton rad_oralMot;
+    private javax.swing.JRadioButton rad_oralPara;
+    private javax.swing.JRadioButton rad_sonMot;
+    private javax.swing.JRadioButton rad_sonPara;
+    private javax.swing.JRadioButton rand_sonLettre;
     // End of variables declaration//GEN-END:variables
     }
 }

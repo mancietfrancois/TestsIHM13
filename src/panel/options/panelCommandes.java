@@ -38,25 +38,25 @@ public class panelCommandes extends Param {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txt_toucheMotComplete = new javax.swing.JTextField();
+        txt_toucheDerniereLettre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        tgl_vocale = new javax.swing.JToggleButton();
 
         jLabel1.setText("Touches du clavier");
 
         jLabel2.setText("Effacer mot complété :");
 
-        jTextField1.setText("F5");
+        txt_toucheMotComplete.setText("F5");
 
-        jTextField2.setText("F8");
+        txt_toucheDerniereLettre.setText("F8");
 
         jLabel3.setText("Effacer dernière lettre du mot complété :");
 
         jLabel4.setText("Commande vocale");
 
-        jToggleButton1.setText("OFF");
+        tgl_vocale.setText("OFF");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -65,13 +65,11 @@ public class panelCommandes extends Param {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToggleButton1))
+                        .addComponent(tgl_vocale))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 116, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,8 +77,8 @@ public class panelCommandes extends Param {
                             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                            .addComponent(jTextField1))))
+                            .addComponent(txt_toucheDerniereLettre, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                            .addComponent(txt_toucheMotComplete))))
                 .addGap(82, 82, 82))
         );
         layout.setVerticalGroup(
@@ -91,15 +89,15 @@ public class panelCommandes extends Param {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_toucheMotComplete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_toucheDerniereLettre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jToggleButton1))
+                    .addComponent(tgl_vocale))
                 .addGap(121, 121, 121))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -108,9 +106,9 @@ public class panelCommandes extends Param {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton tgl_vocale;
+    private javax.swing.JTextField txt_toucheDerniereLettre;
+    private javax.swing.JTextField txt_toucheMotComplete;
     // End of variables declaration//GEN-END:variables
     }
 }

@@ -37,40 +37,40 @@ public class panelCompletion extends Param {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
+        chk_frappe = new javax.swing.JCheckBox();
+        chk_ortho = new javax.swing.JCheckBox();
+        chk_morph = new javax.swing.JCheckBox();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        chk_espace = new javax.swing.JCheckBox();
+        chk_maj = new javax.swing.JCheckBox();
+        chk_accent = new javax.swing.JCheckBox();
 
         jLabel1.setText("Correction de fautes");
 
-        jCheckBox1.setText("Frappes");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        chk_frappe.setText("Frappes");
+        chk_frappe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                chk_frappeActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("Orthographe");
+        chk_ortho.setText("Orthographe");
 
-        jCheckBox3.setText("Morphologie");
+        chk_morph.setText("Morphologie");
 
         jLabel2.setText("Générations automatiques");
 
-        jCheckBox4.setText("Espaces");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        chk_espace.setText("Espaces");
+        chk_espace.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                chk_espaceActionPerformed(evt);
             }
         });
 
-        jCheckBox5.setText("Majuscules");
+        chk_maj.setText("Majuscules");
 
-        jCheckBox6.setText("Accents");
+        chk_accent.setText("Accents");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -84,18 +84,18 @@ public class panelCompletion extends Param {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox4)
+                        .addComponent(chk_espace)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox5)
+                        .addComponent(chk_maj)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox6))
+                        .addComponent(chk_accent))
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
+                        .addComponent(chk_frappe)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox2)
+                        .addComponent(chk_ortho)
                         .addGap(18, 18, 18)
-                        .addComponent(jCheckBox3))
+                        .addComponent(chk_morph))
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -106,36 +106,36 @@ public class panelCompletion extends Param {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3))
+                    .addComponent(chk_frappe)
+                    .addComponent(chk_ortho)
+                    .addComponent(chk_morph))
                 .addGap(59, 59, 59)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6))
+                    .addComponent(chk_espace)
+                    .addComponent(chk_maj)
+                    .addComponent(chk_accent))
                 .addContainerGap(99, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void chk_frappeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk_frappeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_chk_frappeActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void chk_espaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk_espaceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_chk_espaceActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox chk_accent;
+    private javax.swing.JCheckBox chk_espace;
+    private javax.swing.JCheckBox chk_frappe;
+    private javax.swing.JCheckBox chk_maj;
+    private javax.swing.JCheckBox chk_morph;
+    private javax.swing.JCheckBox chk_ortho;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;

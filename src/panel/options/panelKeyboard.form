@@ -21,22 +21,22 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_moinsSec" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="txt_secondes" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_plusSec" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="tgl_clic" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btn_parcourirClavier" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
@@ -62,7 +62,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_parcourirClavier" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
@@ -70,10 +70,10 @@
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txt_secondes" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_plusSec" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_moinsSec" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tgl_clic" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
@@ -88,7 +88,7 @@
         <Property name="text" type="java.lang.String" value="Charger un autre clavier virtuel"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btn_parcourirClavier">
       <Properties>
         <Property name="text" type="java.lang.String" value="Parcourir"/>
       </Properties>
@@ -100,17 +100,17 @@
         <Property name="text" type="java.lang.String" value="Mon clic automatique"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txt_secondes">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btn_plusSec">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btn_moinsSec">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
@@ -120,7 +120,7 @@
         <Property name="text" type="java.lang.String" value="secondes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+    <Component class="javax.swing.JToggleButton" name="tgl_clic">
       <Properties>
         <Property name="text" type="java.lang.String" value="OFF"/>
       </Properties>
@@ -139,7 +139,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_clavierDefaut" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jScrollBar1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -150,14 +150,14 @@
               <Component id="jScrollBar1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_clavierDefaut" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="119" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lbl_clavierDefaut">
           <Properties>
             <Property name="text" type="java.lang.String" value="D&#xe9;faut"/>
           </Properties>

@@ -25,19 +25,19 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
+                      <Component id="chk_espace" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox5" min="-2" max="-2" attributes="0"/>
+                      <Component id="chk_maj" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox6" min="-2" max="-2" attributes="0"/>
+                      <Component id="chk_accent" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="chk_frappe" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                      <Component id="chk_ortho" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
+                      <Component id="chk_morph" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -52,9 +52,9 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chk_frappe" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chk_ortho" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chk_morph" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
               <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
@@ -62,9 +62,9 @@
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chk_espace" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chk_maj" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="chk_accent" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="99" max="32767" attributes="0"/>
           </Group>
@@ -77,20 +77,20 @@
         <Property name="text" type="java.lang.String" value="Correction de fautes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="chk_frappe">
       <Properties>
         <Property name="text" type="java.lang.String" value="Frappes"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chk_frappeActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+    <Component class="javax.swing.JCheckBox" name="chk_ortho">
       <Properties>
         <Property name="text" type="java.lang.String" value="Orthographe"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+    <Component class="javax.swing.JCheckBox" name="chk_morph">
       <Properties>
         <Property name="text" type="java.lang.String" value="Morphologie"/>
       </Properties>
@@ -102,20 +102,20 @@
         <Property name="text" type="java.lang.String" value="G&#xe9;n&#xe9;rations automatiques"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+    <Component class="javax.swing.JCheckBox" name="chk_espace">
       <Properties>
         <Property name="text" type="java.lang.String" value="Espaces"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chk_espaceActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+    <Component class="javax.swing.JCheckBox" name="chk_maj">
       <Properties>
         <Property name="text" type="java.lang.String" value="Majuscules"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+    <Component class="javax.swing.JCheckBox" name="chk_accent">
       <Properties>
         <Property name="text" type="java.lang.String" value="Accents"/>
       </Properties>

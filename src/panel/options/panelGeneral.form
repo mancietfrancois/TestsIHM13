@@ -19,12 +19,12 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                  <Component id="chk_afficheBarre" min="-2" max="-2" attributes="0"/>
+                  <Component id="chk_demarrage" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmb_profilDefaut" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="190" max="32767" attributes="0"/>
@@ -35,26 +35,26 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+              <Component id="chk_demarrage" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cmb_profilDefaut" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="62" max="32767" attributes="0"/>
-              <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+              <Component id="chk_afficheBarre" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="chk_demarrage">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lancement au d&#xe9;marrage de VITIPI"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="cmb_profilDefaut">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -66,7 +66,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmb_profilDefautActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -74,7 +74,7 @@
         <Property name="text" type="java.lang.String" value="Profil par d&#xe9;faut :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+    <Component class="javax.swing.JCheckBox" name="chk_afficheBarre">
       <Properties>
         <Property name="text" type="java.lang.String" value="Afficher la barre d&apos;outils"/>
       </Properties>

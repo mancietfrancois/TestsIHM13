@@ -30,8 +30,8 @@
               </Group>
               <EmptySpace pref="172" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_parcourirDico" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_creerDico" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
           </Group>
@@ -44,12 +44,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_parcourirDico" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_creerDico" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="61" max="32767" attributes="0"/>
           </Group>
@@ -71,9 +71,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_dicoFr" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbl_dicoEN" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jScrollBar1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -85,8 +85,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_dicoFr" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbl_dicoEN" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="123" max="32767" attributes="0"/>
               </Group>
@@ -96,12 +96,12 @@
       <SubComponents>
         <Component class="javax.swing.JScrollBar" name="jScrollBar1">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lbl_dicoFr">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fran&#xe7;ais"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lbl_dicoEN">
           <Properties>
             <Property name="text" type="java.lang.String" value="Anglais"/>
           </Properties>
@@ -118,12 +118,12 @@
         <Property name="text" type="java.lang.String" value="Cr&#xe9;er un nouveau dictionnaire"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btn_parcourirDico">
       <Properties>
         <Property name="text" type="java.lang.String" value="Parcourir"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btn_creerDico">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cr&#xe9;er"/>
       </Properties>

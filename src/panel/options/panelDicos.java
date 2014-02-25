@@ -38,20 +38,20 @@ public class panelDicos extends Param {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollBar1 = new javax.swing.JScrollBar();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lbl_dicoFr = new javax.swing.JLabel();
+        lbl_dicoEN = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_parcourirDico = new javax.swing.JButton();
+        btn_creerDico = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(450, 300));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setText("Français");
+        lbl_dicoFr.setText("Français");
 
-        jLabel2.setText("Anglais");
+        lbl_dicoEN.setText("Anglais");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -59,9 +59,9 @@ public class panelDicos extends Param {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lbl_dicoFr)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(lbl_dicoEN)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -71,8 +71,8 @@ public class panelDicos extends Param {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(lbl_dicoFr)
+                    .addComponent(lbl_dicoEN))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
 
@@ -80,9 +80,9 @@ public class panelDicos extends Param {
 
         jLabel4.setText("Créer un nouveau dictionnaire");
 
-        jButton1.setText("Parcourir");
+        btn_parcourirDico.setText("Parcourir");
 
-        jButton2.setText("Créer");
+        btn_creerDico.setText("Créer");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -96,8 +96,8 @@ public class panelDicos extends Param {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btn_parcourirDico)
+                    .addComponent(btn_creerDico))
                 .addGap(48, 48, 48))
         );
         layout.setVerticalGroup(
@@ -107,23 +107,23 @@ public class panelDicos extends Param {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jButton1))
+                    .addComponent(btn_parcourirDico))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jButton2))
+                    .addComponent(btn_creerDico))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton btn_creerDico;
+    private javax.swing.JButton btn_parcourirDico;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JLabel lbl_dicoEN;
+    private javax.swing.JLabel lbl_dicoFr;
     // End of variables declaration//GEN-END:variables
     }
 }

@@ -37,37 +37,37 @@ public class panelKeyboard extends Param {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_parcourirClavier = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        txt_secondes = new javax.swing.JTextField();
+        btn_plusSec = new javax.swing.JButton();
+        btn_moinsSec = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        tgl_clic = new javax.swing.JToggleButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_clavierDefaut = new javax.swing.JLabel();
         jScrollBar1 = new javax.swing.JScrollBar();
 
         jLabel2.setText("Charger un autre clavier virtuel");
 
-        jButton1.setText("Parcourir");
+        btn_parcourirClavier.setText("Parcourir");
 
         jLabel3.setText("Mon clic automatique");
 
-        jTextField1.setText("3");
+        txt_secondes.setText("3");
 
-        jButton2.setText("+");
+        btn_plusSec.setText("+");
 
-        jButton3.setText("-");
+        btn_moinsSec.setText("-");
 
         jLabel4.setText("secondes");
 
-        jToggleButton1.setText("OFF");
+        tgl_clic.setText("OFF");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setText("Défaut");
+        lbl_clavierDefaut.setText("Défaut");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,7 +75,7 @@ public class panelKeyboard extends Param {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lbl_clavierDefaut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -84,7 +84,7 @@ public class panelKeyboard extends Param {
             .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jLabel1)
+                .addComponent(lbl_clavierDefaut)
                 .addContainerGap(119, Short.MAX_VALUE))
         );
 
@@ -97,19 +97,19 @@ public class panelKeyboard extends Param {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jButton3)
+                        .addComponent(btn_moinsSec)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_secondes, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(btn_plusSec)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
+                .addComponent(tgl_clic)
                 .addGap(82, 82, 82))
             .addGroup(layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btn_parcourirClavier)
                 .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,35 +129,35 @@ public class panelKeyboard extends Param {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jButton1))
+                    .addComponent(btn_parcourirClavier))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jToggleButton1))
+                    .addComponent(txt_secondes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_plusSec)
+                    .addComponent(btn_moinsSec)
+                    .addComponent(tgl_clic))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_moinsSec;
+    private javax.swing.JButton btn_parcourirClavier;
+    private javax.swing.JButton btn_plusSec;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JLabel lbl_clavierDefaut;
+    private javax.swing.JToggleButton tgl_clic;
+    private javax.swing.JTextField txt_secondes;
     // End of variables declaration//GEN-END:variables
     }
 }
