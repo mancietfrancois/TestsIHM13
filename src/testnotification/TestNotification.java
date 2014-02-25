@@ -22,6 +22,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import testparamgen.MenuItemCustom;
+import testparamgen.MenuItemCustomWithCheckbox;
 
 /**
  *
@@ -57,7 +58,7 @@ public class TestNotification {
 
             for (int i = 0; i < 5; i++) {
                 JMenuItem defaultItem = new JMenuItem("", null);
-                MenuItemCustom p = new MenuItemCustom("Dictionnaire", new ImageIcon("./images/iconBarre.png"), Color.GREEN);
+                MenuItemCustomWithCheckbox p = new MenuItemCustomWithCheckbox("Dictionnaire", new ImageIcon("./images/iconBarre.png"), Color.GREEN);
                 defaultItem.setPreferredSize(p.getPreferredSize());
                 defaultItem.add(p);
                 defaultItem.addActionListener(exitListener);
