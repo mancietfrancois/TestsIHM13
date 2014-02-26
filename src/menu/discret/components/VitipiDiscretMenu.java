@@ -11,7 +11,7 @@ import javax.swing.*;
  *
  * @author manciefr
  */
-public class VitipiDiscretMenuItem extends JMenuItem {
+public class VitipiDiscretMenu extends JMenu {
     
     public static final Dimension DEFAULT_ILLUSTRATION_SIZE = new Dimension(50, 50);
     public static final Dimension DEFAULT_COLOR_PANEL_SIZE = new Dimension(13, 53);
@@ -23,11 +23,16 @@ public class VitipiDiscretMenuItem extends JMenuItem {
     protected JPanel jPanelBorderColor;
     protected FlowLayout flowLayout;
     
-    public VitipiDiscretMenuItem(String name, ImageIcon icon, Color color) {
+    public VitipiDiscretMenu(String name, ImageIcon icon, Color color) {
         initComponents();
         jLabelNomItem.setText(name);
         illustrationOption.setIcon(icon);
         jPanelBorderColor.setBackground(color);
+        this.setIcon(icon);        
+        this.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK),
+                BorderFactory.createMatteBorder(0, 13, 0, 0, Color.YELLOW)));
+        this.setText(name);
     }
     
     
@@ -39,7 +44,9 @@ public class VitipiDiscretMenuItem extends JMenuItem {
         setComponentsPreferredSize();
         flowLayout = new FlowLayout(FlowLayout.LEFT, 0, 0);
         
+        /*
         this.setLayout(flowLayout);
+        
         
         this.add(jPanelBorderColor);
         this.add(Box.createRigidArea(new Dimension(10,0)));
@@ -50,7 +57,7 @@ public class VitipiDiscretMenuItem extends JMenuItem {
         this.applyComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         this.validate();
-        this.repaint();
+        this.repaint();*/
     }
     
     public void setComponentsPreferredSize() {

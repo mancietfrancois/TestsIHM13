@@ -19,7 +19,6 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-
 /**
  *
  * @author legranma
@@ -29,9 +28,7 @@ public class TestNotification {
     /**
      * @param args the command line arguments
      */
-    public static CheckboxMenuItem barVisible;
     private static JPopupMenu popup;
-    private static ActionListener actionListener;
     private static PopupPositionCalculator positionCalculator;
     private static JDialog hiddenDialog;
     private static Dimension screenSize;
@@ -48,16 +45,11 @@ public class TestNotification {
             SystemTray tray = SystemTray.getSystemTray();
             Image image = Toolkit.getDefaultToolkit().getImage("./images/menu_discret/iconBarre.png");
 
-            ActionListener exitListener = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    popup.setVisible(false);
-                }
-            };
             hiddenDialog = new JDialog();
             hiddenDialog.setSize(1, 1);
             hiddenDialog.setUndecorated(true);
             hiddenDialog.addWindowFocusListener(new WindowFocusListener() {
+
                 @Override
                 public void windowGainedFocus(WindowEvent we) {
                 }
@@ -72,13 +64,16 @@ public class TestNotification {
             popup.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
             for (int i = 0; i < 5; i++) {
-                JMenuItem defaultItem = new JMenuItem("", null);
-                final VitipiDiscretMenuItemWithCheckBox vitipiMenuItem = new VitipiDiscretMenuItemWithCheckBox("Test", new ImageIcon("./images/menu_discret/iconBarre.png"), Color.yellow);
+                /*JMenuItem defaultItem = new JMenuItem("", null);
+                final VitipiDiscretMenuItemWithCheckBox vitipiMenuItem =
+                        new VitipiDiscretMenuItemWithCheckBox("Test",
+                        new ImageIcon("./images/menu_discret/iconBarre.png"),
+                        Color.yellow);
                 defaultItem.setPreferredSize(vitipiMenuItem.getPreferredSize());
                 defaultItem.add(vitipiMenuItem);
                 defaultItem.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
                 defaultItem.addChangeListener(new ChangeListener() {
-//
+
                     @Override
                     public void stateChanged(ChangeEvent e) {
                         if (((JMenuItem) e.getSource()).isArmed()) {
@@ -87,18 +82,27 @@ public class TestNotification {
                             vitipiMenuItem.setFocusOnPanel(false);
                         }
                     }
-                });
-                popup.add(defaultItem);
+                });*/
+                //popup.add(defaultItem);
+                popup.add(new VitipiDiscretMenuItem("Test",
+                        new ImageIcon("./images/menu_discret/iconBarre.png"),
+                        Color.yellow));
             }
-        
+            VitipiDiscretMenu menuTest = new VitipiDiscretMenu("Test", new ImageIcon("./images/menu_discret/iconBarre.png"), Color.yellow);
+            
+            menuTest.add(new VitipiDiscretMenu("Test1", new ImageIcon("./images/menu_discret/iconBarre.png"), Color.yellow));
+            menuTest.add(new VitipiDiscretMenu("Test2", new ImageIcon("./images/menu_discret/iconBarre.png"), Color.yellow));
+            popup.add(menuTest);
+            
             trayIcon = new TrayIcon(image, "VITIPI", null);
 
             trayIcon.addMouseListener(new MouseAdapter() {
+
                 @Override
                 public void mouseReleased(MouseEvent e) {
                     if (e.getButton() == MouseEvent.BUTTON1) {
                         Point p = positionCalculator.setPopUpMenuLocation(
-                                e.getPoint(), 
+                                e.getPoint(),
                                 popup.getPreferredSize());
                         popup.setLocation(p.x, p.y);
                         popup.setInvoker(hiddenDialog);
@@ -110,6 +114,7 @@ public class TestNotification {
                 }
             });
             trayIcon.addActionListener(new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     Point p = positionCalculator.setPopUpMenuLocation(
@@ -122,7 +127,6 @@ public class TestNotification {
                 }
             });
             trayIcon.setImageAutoSize(true);
-            trayIcon.addActionListener(actionListener);
             try {
                 tray.add(trayIcon);
             } catch (AWTException e) {

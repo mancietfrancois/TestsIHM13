@@ -6,9 +6,11 @@ package menu.discret.components;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
+import javax.swing.UIManager;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  *
@@ -24,6 +26,18 @@ public class VitipiDiscretMenuItemWithCheckBox extends VitipiDiscretMenuItem {
     public VitipiDiscretMenuItemWithCheckBox(String name, ImageIcon icon, Color color) {
         super(name, icon, color);
         initCheckboxComponent();
+        
+        //Permet d'homogénéiser le rendu graphique
+        this.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                if (((VitipiDiscretMenuItem) e.getSource()).isArmed()) {
+                    checkbox.setBackground(UIManager.getColor("MenuItem.selectionBackground"));
+                } else {
+                    checkbox.setBackground(UIManager.getColor("MenuItem.background"));
+                }
+            }
+        });
     }
 
     public final void initCheckboxComponent() {
@@ -34,21 +48,7 @@ public class VitipiDiscretMenuItemWithCheckBox extends VitipiDiscretMenuItem {
 
         checkbox.setIcon(new ImageIcon(CHECKBOX_EMPTY_IMAGE_PATH));
         checkbox.setSelectedIcon(new ImageIcon(CHECKBOX_SELECTED_IMAGE_PATH));
-
         this.add(checkbox);
-        this.validate();
-        this.repaint();
-    }
-    
-    @Override
-    public void setFocusOnPanel(boolean isFocused) {
-        if (isFocused) {
-            this.setBackground(DEFAULT_FOCUSED_COLOR);
-            this.checkbox.setBackground(DEFAULT_FOCUSED_COLOR);
-        } else {
-            this.setBackground(DEFAULT_COLOR);
-            this.checkbox.setBackground(DEFAULT_COLOR);
-        }
         this.validate();
         this.repaint();
     }
