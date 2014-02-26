@@ -13,15 +13,8 @@ import java.awt.Point;
 import java.awt.SystemTray;
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JMenuItem;
-import javax.swing.JPopupMenu;
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
  *
@@ -36,65 +29,66 @@ public class TestNotification {
     private static JPopupMenu popup;
     private static ActionListener actionListener;
     private static PopupPositionCalculator positionCalculator;
+    private static JDialog hiddenDialog;
 
     public static void main(String[] args) {
         final TrayIcon trayIcon;
         JFrame.setDefaultLookAndFeelDecorated(true);
         positionCalculator = new PopupPositionCalculator();
+
         if (SystemTray.isSupported()) {
 
             SystemTray tray = SystemTray.getSystemTray();
             Image image = Toolkit.getDefaultToolkit().getImage("./images/iconBarre.png");
 
             ActionListener exitListener = new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    System.out.println("Exiting...");
-                    System.exit(0);
+                    popup.setVisible(false);
                 }
             };
+            hiddenDialog = new JDialog();
+            hiddenDialog.setSize(10, 10);
+            hiddenDialog.setUndecorated(true);
+            hiddenDialog.addWindowFocusListener(new WindowFocusListener() {
+
+                @Override
+                public void windowGainedFocus(WindowEvent we) {
+                }
+
+                @Override
+                public void windowLostFocus(WindowEvent we) {
+                    hiddenDialog.setVisible(false);
+                }
+            });
+
             popup = new JPopupMenu();
+            popup.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
 
             for (int i = 0; i < 5; i++) {
                 JMenuItem defaultItem = new JMenuItem("", null);
-                MenuItemCustomWithCheckbox p = new MenuItemCustomWithCheckbox("Dictionnaire", new ImageIcon("./images/iconBarre.png"), Color.GREEN);
+                MenuItemCustomWithCheckbox p = new MenuItemCustomWithCheckbox("Dictionnaire",
+                        new ImageIcon("./images/iconBarre.png"), Color.GREEN);
+                p.addActionListener(exitListener);
                 defaultItem.setPreferredSize(p.getPreferredSize());
                 defaultItem.add(p);
+                defaultItem.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
                 defaultItem.addActionListener(exitListener);
                 popup.add(defaultItem);
             }
 
-
             trayIcon = new TrayIcon(image, "VITIPI", null);
 
-            trayIcon.addMouseListener(new MouseListener() {
+            trayIcon.addMouseListener(new MouseAdapter() {
+
                 @Override
                 public void mouseReleased(MouseEvent e) {
-                    if (popup.isVisible()) {
-                        popup.setVisible(false);
-                        popup.setInvoker(null);
-                    } else {
-                        Point p = positionCalculator.setPopUpMenuLocation(e.getPoint(), popup.getPreferredSize());
-                        popup.setLocation(p.x, p.y);
-                        popup.setInvoker(popup);
-                        popup.setVisible(true);
-                    }
-                }
-
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                }
-
-                @Override
-                public void mousePressed(MouseEvent e) {
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
+                    Point p = positionCalculator.setPopUpMenuLocation(e.getPoint(), popup.getPreferredSize());
+                    popup.setLocation(p.x, p.y);
+                    popup.setInvoker(hiddenDialog);
+                    hiddenDialog.setVisible(true);
+                    popup.setVisible(true);
                 }
             });
             trayIcon.setImageAutoSize(true);
