@@ -5,7 +5,6 @@ package panel.options;
 
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import java.awt.BorderLayout;
@@ -30,7 +29,7 @@ public class TabsParam extends JFrame {
         String[] nomParams = new String[]{"Général", "Barre d'outils", "Claviers & clis",
             "Commandes VITIPI", "Complétion", "Dictionnaires", "Feedbacks", "Profils"};
         Param[] params = new Param[]{new panelGeneral(),new panelToolBar(),new panelKeyboard(),new panelCommandes()
-        ,new panelCompletion(),new panelDicos(),new panelFeedbacks(),new panelDicos()};
+        ,new panelCompletion(),new panelDicos(),new panelFeedbacks(),new panelProfil()};
         
         int i = 0;
         for (String s : nomParams) {

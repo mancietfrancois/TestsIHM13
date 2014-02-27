@@ -60,7 +60,7 @@ public class TestBar extends JFrame {
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 params.setVisible(true);
-                 button6.setVisible(false);
+                button6.setVisible(false);
                 button7.setVisible(false);
                 button8.setVisible(false);
                 pack();
@@ -69,7 +69,7 @@ public class TestBar extends JFrame {
 
         button5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-               
+
                 params.setVisible(false);
                 pack();
             }
