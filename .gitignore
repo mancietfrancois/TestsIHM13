@@ -1,5 +1,5 @@
 *.class
-nbproject/*
+nbproject/
 # Package Files #
 *.jar
 *.war

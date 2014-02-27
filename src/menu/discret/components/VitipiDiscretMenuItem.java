@@ -16,7 +16,7 @@ public class VitipiDiscretMenuItem extends JMenuItem {
     public static final Dimension DEFAULT_ILLUSTRATION_SIZE = new Dimension(50, 50);
     public static final Dimension DEFAULT_COLOR_PANEL_SIZE = new Dimension(13, 53);
     public static final Dimension DEFAULT_PANEL_SIZE = new Dimension(275, 55);
-    public static final Dimension DEFAULT_TITLE_SIZE = new Dimension(140, 15);
+    public static final Dimension DEFAULT_TITLE_SIZE = new Dimension(155, 15);
     
     protected JLabel illustrationOption;
     protected JLabel jLabelNomItem;
@@ -46,7 +46,8 @@ public class VitipiDiscretMenuItem extends JMenuItem {
         this.add(illustrationOption);
         this.add(Box.createRigidArea(new Dimension(10,0)));
         this.add(jLabelNomItem);
-
+        this.add(Box.createRigidArea(new Dimension(10,0)));
+        
         this.applyComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
         this.validate();
@@ -83,5 +84,19 @@ public class VitipiDiscretMenuItem extends JMenuItem {
     public Dimension getMaximumSize() {
         return DEFAULT_PANEL_SIZE;
     }
+    
+    @Override
+    public void setText(String txt) {
+        jLabelNomItem.setText(txt);
+    }
+    
+    public String getLabelText() {
+        return jLabelNomItem.getText();
+    }
+    
+    public void changeIcon(Icon icon) {
+        illustrationOption.setIcon(icon);
+    }
+    
 
 }

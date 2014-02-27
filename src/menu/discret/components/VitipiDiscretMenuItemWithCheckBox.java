@@ -18,9 +18,9 @@ import javax.swing.event.ChangeListener;
  */
 public class VitipiDiscretMenuItemWithCheckBox extends VitipiDiscretMenuItem {
 
-    private static final String CHECKBOX_EMPTY_IMAGE_PATH = "./images/checkbox/checkbox-empty_small.png";
-    private static final String CHECKBOX_SELECTED_IMAGE_PATH = "./images/checkbox/checkbox-ticked_small.png";
-    private static final Dimension DEFAULT_CHECKBOX_SIZE = new Dimension(36, 36);
+    private static final String CHECKBOX_EMPTY_IMAGE_PATH = "./images/checkbox/checkbox-empty_small2.png";
+    private static final String CHECKBOX_SELECTED_IMAGE_PATH = "./images/checkbox/checkbox-ticked_small2.png";
+    private static final Dimension DEFAULT_CHECKBOX_SIZE = new Dimension(25, 25);
     protected JCheckBox checkbox;
 
     public VitipiDiscretMenuItemWithCheckBox(String name, ImageIcon icon, Color color) {
