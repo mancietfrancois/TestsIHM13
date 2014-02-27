@@ -41,7 +41,7 @@ public class MainTabsAndBar {
 
 
         
-        TabsParam t2 = new TabsParam();
+      // TabsParam t2 = new TabsParam();
         t.setVisible(true);
     }
 }

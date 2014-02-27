@@ -4,16 +4,21 @@
  */
 package menu.complet;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.Paint;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -24,7 +29,7 @@ import javax.swing.JPanel;
  */
 public class TestBar extends JFrame {
 
-    private JButton button1;
+    private ItemBar itemBar;
     private JButton button2;
     private JButton button3;
     private JButton button4;
@@ -36,12 +41,12 @@ public class TestBar extends JFrame {
 
     public TestBar() {
         super("GradientTranslucentWindow");
-        setBackground(new Color(0, 0, 0, 0));
-        setSize(410, 500);
+        //setBackground(new Color(0, 0, 0, 0));
+        setSize(500, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        button1 = new JButton("Bouton");
-        button1.setVisible(true);
+        itemBar = new ItemBarDico();
+        itemBar.setVisible(true);
         button2 = new JButton("Bouton");
         button2.setVisible(true);
         button3 = new JButton("Bouton");
@@ -49,33 +54,66 @@ public class TestBar extends JFrame {
         button4 = new JButton("Bouton");
         button4.setVisible(true);
         button5 = new JButton("Bouton");
-        button5.setVisible(true);
+        button5.setVisible(false);
         button6 = new JButton("Bouton");
-        button6.setVisible(true);
+        button6.setVisible(false);
         button7 = new JButton("Bouton");
-        button7.setVisible(true);
+        button7.setVisible(false);
         button8 = new JButton("Bouton");
-        button8.setVisible(true);
-
-        button1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                params.setVisible(true);
-                button6.setVisible(false);
-                button7.setVisible(false);
-                button8.setVisible(false);
-                pack();
-            }
-        });
-
+        button8.setVisible(false);
+        
         button5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
                 params.setVisible(false);
-                pack();
+                //button5.setVisible(false);
+                //pack();
+                //validate();
             }
         });
-        setLayout(new GridBagLayout());
+        params = new JPanel() {
+            protected void paintComponent(Graphics g) {
+                if (g instanceof Graphics2D) {
+                    final int R = 255;
+                    final int G = 255;
+                    final int B = 255;
+
+                    Paint p =
+                            new GradientPaint(0.0f, 0.0f, new Color(R, G, B, 0),
+                            0.0f, getHeight(), new Color(R, G, B, 0), true);
+                    Graphics2D g2d = (Graphics2D) g;
+                    g2d.setPaint(p);
+                    g2d.fillRect(0, 0, getWidth(), getHeight());
+                }
+            }
+        };
+
+
+
+        /* itemBar.addMouseListener(new MouseAdapter() {
+         public void mouseClicked(ActionEvent e) {
+         params.setVisible(true);
+         button6.setVisible(false);
+         button7.setVisible(false);
+         button8.setVisible(false);
+         pack();
+         }
+         });
+         * */
+
+
+
+        button6.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                button5.setVisible(false);
+                //pack();
+            }
+        });
+
+        setLayout(new FlowLayout());
         GridBagConstraints gbc = new GridBagConstraints();
+        // gbc.weightx = gbc.weighty = 1.0;
+        gbc.fill = GridBagConstraints.BOTH;
         gbc.gridx = 0;
         gbc.gridy = 0;
 
@@ -97,35 +135,23 @@ public class TestBar extends JFrame {
         };
         GridLayout buttonsGrid = new GridLayout(1, 4);
         buttons.setLayout(buttonsGrid);
-        params = new JPanel() {
-            protected void paintComponent(Graphics g) {
-                if (g instanceof Graphics2D) {
-                    final int R = 255;
-                    final int G = 255;
-                    final int B = 255;
-
-                    Paint p =
-                            new GradientPaint(0.0f, 0.0f, new Color(R, G, B, 0),
-                            0.0f, getHeight(), new Color(R, G, B, 0), true);
-                    Graphics2D g2d = (Graphics2D) g;
-                    g2d.setPaint(p);
-                    g2d.fillRect(0, 0, getWidth(), getHeight());
-                }
-            }
-        };
+       
 
         GridLayout paramsGrid = new GridLayout(1, 4);
         params.setLayout(paramsGrid);
+       
 
-        add(buttons, gbc);
-        buttons.add(button1);
+        add(buttons);
+        buttons.add(itemBar);
         buttons.add(button2);
         buttons.add(button3);
         buttons.add(button4);
 
         gbc.gridy = 1;
-        add(params, gbc);
+        gbc.weighty = 1.0;
+        //add(params);
 
+        JPanel p = new JPanel();
 
         params.add(button5);
         params.add(button6);
@@ -134,6 +160,6 @@ public class TestBar extends JFrame {
 
         buttons.setVisible(true);
         params.setVisible(false);
-        pack();
+        // pack();
     }
 }
