@@ -23,7 +23,9 @@ public class TabsParam extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         String[] nomParams = new String[]{"Général", "Barre d'outils", "Claviers & clics",
             "Commandes VITIPI", "Complétion", "Dictionnaires", "Feedbacks", "Profils"};
+
         AbstractSpecificPanel[] params = new AbstractSpecificPanel[]{new PanelGeneral("Général"), new PanelToolBar("Barre d'outils"), new PanelKeyboard("Claviers & clics"), new PanelCommandes("Commandes VITIPI"), new PanelCompletion("Complétion"), new PanelDicos("Dictionnaires"), new PanelFeedbacks("Feedbacks"), new PanelProfil("Profils")};
+
 
         int i = 0;
         for (String s : nomParams) {
@@ -73,35 +75,27 @@ public class TabsParam extends JFrame {
      * invoked from the event dispatch thread.
      */
     private static void createAndShowGUI() {
-        //Create and set up the window.
-        JFrame frame = new JFrame("TabbedPaneDemo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        //Add content to the window.
-        frame.add(new TabsParam(), BorderLayout.CENTER);
-
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
+        new TabsParam();
     }
 
     public static void main(String[] args) {
         //Schedule a job for the event dispatch thread:
         //creating and showing this application's GUI.
+        //Turn off metal's use of bold fonts
 //        SwingUtilities.invokeLater(new Runnable() {
 //            public void run() {
-                //Turn off metal's use of bold fonts
-                // My own font
-                Font myFont = new Font("Segoe UI Semibold", Font.PLAIN, 12);
+        //Turn off metal's use of bold fonts
+        // My own font
+        Font myFont = new Font("Segoe UI Semibold", Font.PLAIN, 12);
 
-                // Replacing global component fonts
-                UIManager.put("Button.font", myFont);
-                 UIManager.put("Checkbox.font", myFont);
-                 UIManager.put("RadioButton.font", myFont);
-                UIManager.put("Button.background", Color.white);
-                UIManager.put("ToggleButton.font", myFont);
-                UIManager.put("Label.font", myFont);
-                createAndShowGUI();
+        // Replacing global component fonts
+        UIManager.put("Button.font", myFont);
+        UIManager.put("Checkbox.font", myFont);
+        UIManager.put("RadioButton.font", myFont);
+        UIManager.put("Button.background", Color.white);
+        UIManager.put("ToggleButton.font", myFont);
+        UIManager.put("Label.font", myFont);
+        createAndShowGUI();
 //            }
 //        });
     }

@@ -21,10 +21,25 @@ public class MainTabsAndBar {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 
+    
+     
 
+    public static void main(String[] args)  {
         TestBar t = new TestBar();
+        try {
+
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+             SwingUtilities.updateComponentTreeUI(t);  
+        } catch (UnsupportedLookAndFeelException e) {
+            // handle exception
+        } catch (ClassNotFoundException e) {
+            // handle exception
+        } catch (InstantiationException e) {
+            // handle exception
+        } catch (IllegalAccessException e) {
+            // handle exception
+        }
 
 
 

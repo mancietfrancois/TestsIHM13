@@ -14,8 +14,8 @@ import javax.swing.*;
 public class VitipiDiscretMenuItem extends JMenuItem {
     
     public static final Dimension DEFAULT_ILLUSTRATION_SIZE = new Dimension(50, 50);
-    public static final Dimension DEFAULT_COLOR_PANEL_SIZE = new Dimension(13, 53);
-    public static final Dimension DEFAULT_PANEL_SIZE = new Dimension(275, 55);
+    public static final Dimension DEFAULT_COLOR_PANEL_SIZE = new Dimension(10, 53);
+    public static final Dimension DEFAULT_PANEL_SIZE = new Dimension(285, 55);
     public static final Dimension DEFAULT_TITLE_SIZE = new Dimension(155, 15);
     
     protected JLabel illustrationOption;
