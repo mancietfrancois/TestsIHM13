@@ -26,8 +26,9 @@ public class MainTabsAndBar {
         
         try {
             // Set System L&F
-            UIManager.setLookAndFeel(
-            UIManager.getSystemLookAndFeelClassName());
+            /*UIManager.setLookAndFeel(
+            UIManager.getSystemLookAndFeelClassName());*/
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
              SwingUtilities.updateComponentTreeUI(t);  
         } catch (UnsupportedLookAndFeelException e) {
             // handle exception

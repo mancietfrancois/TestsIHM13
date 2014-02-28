@@ -1,21 +1,15 @@
-
 package panel.options;
 
-
-
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
 
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
-
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 
 public class TabsParam extends JFrame {
 
@@ -28,17 +22,16 @@ public class TabsParam extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         String[] nomParams = new String[]{"Général", "Barre d'outils", "Claviers & clis",
             "Commandes VITIPI", "Complétion", "Dictionnaires", "Feedbacks", "Profils"};
-        Param[] params = new Param[]{new panelGeneral(),new panelToolBar(),new panelKeyboard(),new panelCommandes()
-        ,new panelCompletion(),new panelDicos(),new panelFeedbacks(),new panelProfil()};
-        
+        Param[] params = new Param[]{new panelGeneral(), new panelToolBar(), new panelKeyboard(), new panelCommandes(), new panelCompletion(), new panelDicos(), new panelFeedbacks(), new panelProfil()};
+
         int i = 0;
         for (String s : nomParams) {
-            
+
             tabbedPane.addTab(s, tabIcon, params[i]);
             i++;
         }
-       
-        tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);      
+
+        tabbedPane.setMnemonicAt(2, KeyEvent.VK_3);
 
         tabbedPane.setTabPlacement(JTabbedPane.LEFT);
         setSize(700, 500);
@@ -53,11 +46,11 @@ public class TabsParam extends JFrame {
     protected JPanel makeTextPanel(String text) {
         /*
          JPanel panel = new JPanel(false);
-        JLabel filler = new JLabel(text);
-        filler.setHorizontalAlignment(JLabel.CENTER);
-        panel.setLayout(new GridLayout(1, 1));
-        panel.add(filler);
-        */
+         JLabel filler = new JLabel(text);
+         filler.setHorizontalAlignment(JLabel.CENTER);
+         panel.setLayout(new GridLayout(1, 1));
+         panel.add(filler);
+         */
         return new panelToolBar();
     }
 
@@ -79,27 +72,30 @@ public class TabsParam extends JFrame {
      * invoked from the event dispatch thread.
      */
     private static void createAndShowGUI() {
-        //Create and set up the window.
-        JFrame frame = new JFrame("TabbedPaneDemo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        //Add content to the window.
-        frame.add(new TabsParam(), BorderLayout.CENTER);
-
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
+        new TabsParam();
     }
 
     public static void main(String[] args) {
         //Schedule a job for the event dispatch thread:
         //creating and showing this application's GUI.
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                //Turn off metal's use of bold fonts
-                UIManager.put("swing.boldMetal", Boolean.FALSE);
-                createAndShowGUI();
+        //Turn off metal's use of bold fonts
+
+        try {
+            for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Windows".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
-        });
+        } catch (Exception e) {
+            // If Nimbus is not available, you can set the GUI to another look and feel.
+        }
+
+        UIManager.put("Label.font", new Font("Segoe UI Semibold", Font.PLAIN, 13));
+        UIManager.put("Button.background", Color.WHITE);
+        UIManager.put("RadioButton.icon", new ImageIcon("./images/radioButton/radiobutton-unchecked.png"));
+        UIManager.put("CheckBox.icon", new ImageIcon("./images/checkbox/checkbox-empty_small2.png"));
+        UIManager.put("CheckBox[Selected].checkIcon", new ImageIcon("./images/checkbox/checkbox-ticked_small2.png"));
+        createAndShowGUI();
     }
 }
