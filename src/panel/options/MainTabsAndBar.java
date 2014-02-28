@@ -25,7 +25,27 @@ public class MainTabsAndBar {
 
     
         TestBar t = new TestBar();
+<<<<<<< HEAD
+        
+        try {
+            // Set System L&F
+            /*UIManager.setLookAndFeel(
+            UIManager.getSystemLookAndFeelClassName());*/
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+             SwingUtilities.updateComponentTreeUI(t);  
+        } catch (UnsupportedLookAndFeelException e) {
+            // handle exception
+        } catch (ClassNotFoundException e) {
+            // handle exception
+        } catch (InstantiationException e) {
+            // handle exception
+        } catch (IllegalAccessException e) {
+            // handle exception
+        }
+
+=======
     
+>>>>>>> b72e597a0bd8c81e8d6801d49a06bb8933b620ba
 
          
         
