@@ -5,17 +5,21 @@
 package panel.options;
 
 import javax.swing.JPanel;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 /**
  *
  * @author legranma
  */
-public class panelCompletion extends Param {
+public class PanelCompletion extends AbstractSpecificPanel {
+
+    public PanelCompletion(String title){
+        super(title);
+    }
 
     @Override
-    public JPanel personliserParams() {
-        setTitle("Paramètres de complétion");
-        return new ParamsCompletion();
+    protected JPanel generateSpecificPanel() {
+       return new ParamsCompletion();
     }
 
     public class ParamsCompletion extends javax.swing.JPanel {

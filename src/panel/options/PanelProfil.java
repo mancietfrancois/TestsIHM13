@@ -5,17 +5,20 @@
 package panel.options;
 
 import javax.swing.JPanel;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 /**
  *
  * @author legranma
  */
-public class panelProfil extends Param {
+public class PanelProfil extends AbstractSpecificPanel {
 
+   public PanelProfil(String title){
+       super(title);
+   }
     @Override
-    public JPanel personliserParams() {
-        setTitle("Profil");
-        return new ParamsProfil();
+    protected JPanel generateSpecificPanel() {
+       return new ParamsProfil();
     }
 
     public class ParamsProfil extends javax.swing.JPanel {

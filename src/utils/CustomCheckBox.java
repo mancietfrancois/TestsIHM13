@@ -27,6 +27,10 @@ public class CustomCheckBox extends JCheckBox {
         setSelectedIcon(new ImageIcon(CHECKBOX_SELECTED_IMAGE_PATH));
     }
     
+        public CustomCheckBox() {
+            this(new Dimension(25, 25));
+    }
+    
     @Override
     public Dimension getPreferredSize() {
         return CHECKBOX_DIMENSION;

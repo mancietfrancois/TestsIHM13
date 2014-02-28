@@ -5,19 +5,24 @@
 package panel.options;
 
 import javax.swing.JPanel;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 /**
  *
  * @author legranma
  */
-public class panelToolBar extends Param {
+public class PanelToolBar extends AbstractSpecificPanel {
+    private static final long serialVersionUID = 1L;
 
-    @Override    
-    public JPanel personliserParams() {
-        
-        setTitle("Ma barre d'outils");
-        return new ParamsToolBar();
+    public PanelToolBar(String title){
+        super(title);
     }
+    @Override
+    protected JPanel generateSpecificPanel() {
+         return new ParamsToolBar();
+    }
+
+
 
     public class ParamsToolBar extends javax.swing.JPanel {
 
@@ -73,7 +78,6 @@ public class panelToolBar extends Param {
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
         jLabel6.setText("Environnment");
 
-        lbl_dico.setIcon(new javax.swing.ImageIcon("C:\\Users\\legranma\\Documents\\NetBeansProjects\\TestsIHM13\\images\\menu_discret\\Vitipi_Dictionnaire.gif")); // NOI18N
         lbl_dico.setText("Dictionnaires");
 
         lbl_clavierVirtuel.setText("Claviers virtuels");

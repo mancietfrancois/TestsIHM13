@@ -5,25 +5,31 @@
 package panel.options;
 
 import javax.swing.JPanel;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 /**
  *
  * @author legranma
  */
-public class panelDicos extends Param {
+public class PanelDicos extends AbstractSpecificPanel {
 
-    @Override
-    public JPanel personliserParams() {
-        setTitle("Mes dictionnaires");
-        return new paramsDicos();
+    public PanelDicos(String title){
+        super(title);
     }
 
-    public class paramsDicos extends javax.swing.JPanel {
+    @Override
+    protected JPanel generateSpecificPanel() {
+       return new ParamsDicos();
+    }
+
+  
+
+    public class ParamsDicos extends javax.swing.JPanel {
 
         /**
          * Creates new form panelDicos
          */
-        public paramsDicos() {
+        public ParamsDicos() {
             initComponents();
         }
 

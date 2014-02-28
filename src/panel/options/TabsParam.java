@@ -8,13 +8,10 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 
 public class TabsParam extends JFrame {
@@ -26,10 +23,10 @@ public class TabsParam extends JFrame {
         ImageIcon icon = new ImageIcon("U:\\cadis.gif");
         ImageIcon tabIcon = new ImageIcon("U:\\tab_icon.gif");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        String[] nomParams = new String[]{"Général", "Barre d'outils", "Claviers & clis",
+        String[] nomParams = new String[]{"Général", "Barre d'outils", "Claviers & clics",
             "Commandes VITIPI", "Complétion", "Dictionnaires", "Feedbacks", "Profils"};
-        Param[] params = new Param[]{new panelGeneral(),new panelToolBar(),new panelKeyboard(),new panelCommandes()
-        ,new panelCompletion(),new panelDicos(),new panelFeedbacks(),new panelProfil()};
+        AbstractSpecificPanel[] params = new AbstractSpecificPanel[]{new PanelGeneral("Général"),new PanelToolBar("Barre d'outils"),new PanelKeyboard("Claviers & clics"),new PanelCommandes("Commandes VITIPI")
+        ,new PanelCompletion("Complétion"),new PanelDicos("Dictionnaires"),new PanelFeedbacks( "Feedbacks"),new PanelProfil("Profils")};
         
         int i = 0;
         for (String s : nomParams) {
@@ -58,7 +55,7 @@ public class TabsParam extends JFrame {
         panel.setLayout(new GridLayout(1, 1));
         panel.add(filler);
         */
-        return new panelToolBar();
+        return new PanelToolBar("Barre d'outils");
     }
 
     /**
