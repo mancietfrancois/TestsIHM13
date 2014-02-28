@@ -4,6 +4,8 @@
  */
 package panel.options;
 
+import java.awt.Color;
+import java.awt.Font;
 import menu.complet.TestBar;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -21,25 +23,11 @@ public class MainTabsAndBar {
      */
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 
-        JFrame.setDefaultLookAndFeelDecorated(true);
+    
         TestBar t = new TestBar();
-        
-        try {
-            // Set System L&F
-            UIManager.setLookAndFeel(
-            UIManager.getSystemLookAndFeelClassName());
-             SwingUtilities.updateComponentTreeUI(t);  
-        } catch (UnsupportedLookAndFeelException e) {
-            // handle exception
-        } catch (ClassNotFoundException e) {
-            // handle exception
-        } catch (InstantiationException e) {
-            // handle exception
-        } catch (IllegalAccessException e) {
-            // handle exception
-        }
+    
 
-
+         
         
       // TabsParam t2 = new TabsParam();
         t.setVisible(true);
