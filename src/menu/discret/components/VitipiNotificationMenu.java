@@ -46,15 +46,17 @@ public class VitipiNotificationMenu {
     private VitipiDiscretMenuItem menuItemEteindreVitipi;
     private VitipiDiscretMenuItemWithCheckBox menuItemCommandeVocale;
     private VitipiDiscretMenuItemWithCheckBox menuItemGomme;
-    
-    public static final String DEFAULT_MENU_PROFIL_TITLE = "Profil : ";
+    /**
+     * Affichage
+     */
+    public static final String DEFAULT_MENU_PROFIL_TITLE = "    Profil : ";
     public static final String DEFAULT_MENUITEM_AFFICHER_BARRE_TITLE = "Afficher barre";
     public static final String DEFAULT_MENUITEM_PARAMETRE_TITLE = "Paramètres";
     public static final String DEFAULT_MENUITEM_VOCALE_ENABLED = "Activer Commande Vocale";
     public static final String DEFAULT_MENUITEM_VOCALE_DISABLED = "Désactiver Commande Vocale";
     public static final String DEFAULT_MENUITEM_GOMME_ENABLED = "Activer Gomme";
     public static final String DEFAULT_MENUITEM_GOMME_DISABLED = "Désactiver Gomme";
-    public static final String DEFAULT_MENU_DICTIONNAIRE_TITLE = "Changer dictionnaire";
+    public static final String DEFAULT_MENU_DICTIONNAIRE_TITLE = "    Changer dictionnaire";
     public static final String DEFAULT_MENUITEM_ETEINDRE_VITIPI_TITLE = "Eteindre VITIPI";
     public static final String DEFAULT_MENUITEM_AllUMER_VITIPI_TITLE = "Allumer VITIPI";
     

@@ -46,6 +46,7 @@ public class panelCompletion extends Param {
         chk_maj = new javax.swing.JCheckBox();
         chk_accent = new javax.swing.JCheckBox();
 
+        jLabel1.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jLabel1.setText("Correction de fautes");
 
         chk_frappe.setText("Frappes");
@@ -59,6 +60,7 @@ public class panelCompletion extends Param {
 
         chk_morph.setText("Morphologie");
 
+        jLabel2.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jLabel2.setText("Générations automatiques");
 
         chk_espace.setText("Espaces");
@@ -109,16 +111,16 @@ public class panelCompletion extends Param {
                     .addComponent(chk_frappe)
                     .addComponent(chk_ortho)
                     .addComponent(chk_morph))
-                .addGap(59, 59, 59)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(chk_espace)
                     .addComponent(chk_maj)
                     .addComponent(chk_accent))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

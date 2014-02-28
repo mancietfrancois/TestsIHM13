@@ -2,7 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package menu.discret.components;
+package menu.discret.tests;
+
+import menu.discret.components.VitipiNotificationMenu;
 
 /**
  *
