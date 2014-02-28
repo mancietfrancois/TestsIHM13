@@ -13,16 +13,14 @@ import panel.options.hand.design.AbstractSpecificPanel;
  */
 public class PanelDicos extends AbstractSpecificPanel {
 
-    public PanelDicos(String title){
+    public PanelDicos(String title) {
         super(title);
     }
 
     @Override
     protected JPanel generateSpecificPanel() {
-       return new ParamsDicos();
+        return new ParamsDicos();
     }
-
-  
 
     public class ParamsDicos extends javax.swing.JPanel {
 

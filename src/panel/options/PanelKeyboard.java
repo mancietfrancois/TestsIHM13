@@ -12,7 +12,8 @@ import panel.options.hand.design.AbstractSpecificPanel;
  * @author legranma
  */
 public class PanelKeyboard extends AbstractSpecificPanel {
-    public PanelKeyboard(String title){
+
+    public PanelKeyboard(String title) {
         super(title);
     }
 

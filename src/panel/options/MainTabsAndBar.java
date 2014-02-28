@@ -23,13 +23,13 @@ public class MainTabsAndBar {
      */
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
 
-    
-        TestBar t = new TestBar();
-    
 
-         
-        
-      // TabsParam t2 = new TabsParam();
+        TestBar t = new TestBar();
+
+
+
+
+       // TabsParam t2 = new TabsParam();
         t.setVisible(true);
     }
 }

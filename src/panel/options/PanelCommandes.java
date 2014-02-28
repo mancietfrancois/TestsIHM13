@@ -12,23 +12,23 @@ import panel.options.hand.design.AbstractSpecificPanel;
  * @author legranma
  */
 public class PanelCommandes extends AbstractSpecificPanel {
+
     private static final long serialVersionUID = 1L;
 
-    public PanelCommandes(String title){
+    public PanelCommandes(String title) {
         super(title);
     }
+
     @Override
     protected JPanel generateSpecificPanel() {
         return new ParamsCommandes();
     }
 
-
-
     public class ParamsCommandes extends javax.swing.JPanel {
 
         /**
-         * Creates new form panelCommandes */
-         
+         * Creates new form panelCommandes
+         */
         public ParamsCommandes() {
             initComponents();
         }

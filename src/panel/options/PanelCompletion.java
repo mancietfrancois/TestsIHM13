@@ -13,13 +13,13 @@ import panel.options.hand.design.AbstractSpecificPanel;
  */
 public class PanelCompletion extends AbstractSpecificPanel {
 
-    public PanelCompletion(String title){
+    public PanelCompletion(String title) {
         super(title);
     }
 
     @Override
     protected JPanel generateSpecificPanel() {
-       return new ParamsCompletion();
+        return new ParamsCompletion();
     }
 
     public class ParamsCompletion extends javax.swing.JPanel {

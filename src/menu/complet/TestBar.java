@@ -29,90 +29,22 @@ import javax.swing.JPanel;
  */
 public class TestBar extends JFrame {
 
-    private ItemBar itemBar;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
-    private JButton button7;
-    private JButton button8;
-    private JPanel params;
+  
 
     public TestBar() {
         super("GradientTranslucentWindow");
-        //setBackground(new Color(0, 0, 0, 0));
-        setSize(500, 200);
+        setUndecorated(true);
+        setBackground(new Color(0, 0, 0, 0));
+        setSize(1500, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        itemBar = new ItemBarDico();
-        itemBar.setVisible(true);
-        button2 = new JButton("Bouton");
-        button2.setVisible(true);
-        button3 = new JButton("Bouton");
-        button3.setVisible(true);
-        button4 = new JButton("Bouton");
-        button4.setVisible(true);
-        button5 = new JButton("Bouton");
-        button5.setVisible(false);
-        button6 = new JButton("Bouton");
-        button6.setVisible(false);
-        button7 = new JButton("Bouton");
-        button7.setVisible(false);
-        button8 = new JButton("Bouton");
-        button8.setVisible(false);
         
-        button5.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                params.setVisible(false);
-                //button5.setVisible(false);
-                //pack();
-                //validate();
-            }
-        });
-        params = new JPanel() {
-            protected void paintComponent(Graphics g) {
-                if (g instanceof Graphics2D) {
-                    final int R = 255;
-                    final int G = 255;
-                    final int B = 255;
-
-                    Paint p =
-                            new GradientPaint(0.0f, 0.0f, new Color(R, G, B, 0),
-                            0.0f, getHeight(), new Color(R, G, B, 0), true);
-                    Graphics2D g2d = (Graphics2D) g;
-                    g2d.setPaint(p);
-                    g2d.fillRect(0, 0, getWidth(), getHeight());
-                }
-            }
-        };
-
-
-
-        /* itemBar.addMouseListener(new MouseAdapter() {
-         public void mouseClicked(ActionEvent e) {
-         params.setVisible(true);
-         button6.setVisible(false);
-         button7.setVisible(false);
-         button8.setVisible(false);
-         pack();
-         }
-         });
-         * */
-
-
-
-        button6.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-                button5.setVisible(false);
-                //pack();
-            }
-        });
-
+        ItemBar itemDico = new ItemBarDico();        
+        ItemBar itemClav = new ItemBarClaviers();
+        
+   
         setLayout(new FlowLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        // gbc.weightx = gbc.weighty = 1.0;
+       
         gbc.fill = GridBagConstraints.BOTH;
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -133,33 +65,31 @@ public class TestBar extends JFrame {
                 }
             }
         };
-        GridLayout buttonsGrid = new GridLayout(1, 4);
-        buttons.setLayout(buttonsGrid);
+        
+        buttons.setLayout(new GridBagLayout());
        
-
-        GridLayout paramsGrid = new GridLayout(1, 4);
-        params.setLayout(paramsGrid);
-       
-
         add(buttons);
-        buttons.add(itemBar);
-        buttons.add(button2);
-        buttons.add(button3);
-        buttons.add(button4);
-
-        gbc.gridy = 1;
-        gbc.weighty = 1.0;
-        //add(params);
-
-        JPanel p = new JPanel();
-
-        params.add(button5);
-        params.add(button6);
-        params.add(button7);
-        params.add(button8);
-
-        buttons.setVisible(true);
-        params.setVisible(false);
-        // pack();
+        buttons.add(itemDico,gbc);
+        gbc.gridx = 1;
+        buttons.add(itemClav,gbc);
+        
+        gbc.gridx = 2;
+        buttons.add(new ItemBarCorrections(),gbc);
+        
+        gbc.gridx = 3;
+        buttons.add(new ItemBarRelecture(),gbc);
+        
+        gbc.gridx = 4;
+        buttons.add(new ItemBarRetours());
+        
+        gbc.gridx = 5;
+        buttons.add(new ItemBarStop());
+        
+        gbc.gridx = 6;        
+        buttons.add(new ItemBarProfil());
+        
+        gbc.gridx = 7;        
+        buttons.add(new ItemBarOutils());
+              
     }
 }

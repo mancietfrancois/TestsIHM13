@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class ItemBarDico extends ItemBar {
 
     private JButton lbl_dico;
-   
+
     public ItemBarDico() {
 
         title.setText("Dictionnaire");
@@ -31,21 +31,7 @@ public class ItemBarDico extends ItemBar {
 
         items.add(lbl_dico);
 
-        panelItem.add(lbl_dico, BorderLayout.CENTER);
-
-        colorPanel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                
-                buttonParam.setVisible(true);
-            }
-           /* public void mouseExited(MouseEvent e)
-            {
-                panelParam.setVisible(false);
-                buttonParam.setVisible(false);
-            }
-            * */
-        });
+        addCompCenter();
 
     }
 }

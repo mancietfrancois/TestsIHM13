@@ -13,14 +13,13 @@ import panel.options.hand.design.AbstractSpecificPanel;
  */
 public class PanelFeedbacks extends AbstractSpecificPanel {
 
-   
-    public PanelFeedbacks(String title){
-          super(title);
+    public PanelFeedbacks(String title) {
+        super(title);
     }
 
     @Override
     protected JPanel generateSpecificPanel() {
-          return new ParamsFeedbacks();
+        return new ParamsFeedbacks();
     }
 
     public class ParamsFeedbacks extends javax.swing.JPanel {

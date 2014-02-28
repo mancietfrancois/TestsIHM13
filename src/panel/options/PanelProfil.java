@@ -13,12 +13,13 @@ import panel.options.hand.design.AbstractSpecificPanel;
  */
 public class PanelProfil extends AbstractSpecificPanel {
 
-   public PanelProfil(String title){
-       super(title);
-   }
+    public PanelProfil(String title) {
+        super(title);
+    }
+
     @Override
     protected JPanel generateSpecificPanel() {
-       return new ParamsProfil();
+        return new ParamsProfil();
     }
 
     public class ParamsProfil extends javax.swing.JPanel {
@@ -120,7 +121,6 @@ public class PanelProfil extends AbstractSpecificPanel {
     private void btn_parcourirProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_parcourirProfilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_parcourirProfilActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_creerProfil;
     private javax.swing.JButton btn_parcourirProfil;

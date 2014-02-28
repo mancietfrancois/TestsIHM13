@@ -13,10 +13,9 @@ import panel.options.hand.design.AbstractSpecificPanel;
  */
 public class PanelGeneral extends AbstractSpecificPanel {
 
-    
-   public PanelGeneral(String title){
-       super(title);
-   }
+    public PanelGeneral(String title) {
+        super(title);
+    }
 
     @Override
     protected JPanel generateSpecificPanel() {
