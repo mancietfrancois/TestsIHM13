@@ -90,18 +90,18 @@ public class TabsParam extends JFrame {
         //creating and showing this application's GUI.
 //        SwingUtilities.invokeLater(new Runnable() {
 //            public void run() {
-                //Turn off metal's use of bold fonts
-                // My own font
-                Font myFont = new Font("Segoe UI Semibold", Font.PLAIN, 12);
+        //Turn off metal's use of bold fonts
+        // My own font
+        Font myFont = new Font("Segoe UI Semibold", Font.PLAIN, 12);
 
-                // Replacing global component fonts
-                UIManager.put("Button.font", myFont);
-                 UIManager.put("Checkbox.font", myFont);
-                 UIManager.put("RadioButton.font", myFont);
-                UIManager.put("Button.background", Color.white);
-                UIManager.put("ToggleButton.font", myFont);
-                UIManager.put("Label.font", myFont);
-                createAndShowGUI();
+        // Replacing global component fonts
+        UIManager.put("Button.font", myFont);
+        UIManager.put("Checkbox.font", myFont);
+        UIManager.put("RadioButton.font", myFont);
+        UIManager.put("Button.background", Color.white);
+        UIManager.put("ToggleButton.font", myFont);
+        UIManager.put("Label.font", myFont);
+        createAndShowGUI();
 //            }
 //        });
     }

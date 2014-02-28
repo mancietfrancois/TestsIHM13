@@ -49,8 +49,11 @@ public class PanelCompletion extends AbstractSpecificPanel {
         chk_espace = new javax.swing.JCheckBox();
         chk_maj = new javax.swing.JCheckBox();
         chk_accent = new javax.swing.JCheckBox();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel3 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
-        jLabel1.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jLabel1.setText("Correction de fautes");
 
         chk_frappe.setText("Frappes");
@@ -64,7 +67,6 @@ public class PanelCompletion extends AbstractSpecificPanel {
 
         chk_morph.setText("Morphologie");
 
-        jLabel2.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jLabel2.setText("Générations automatiques");
 
         chk_espace.setText("Espaces");
@@ -78,6 +80,19 @@ public class PanelCompletion extends AbstractSpecificPanel {
 
         chk_accent.setText("Accents");
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Langue");
+
+        jRadioButton1.setText("Letter");
+
+        jRadioButton2.setText("Letter");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,28 +102,48 @@ public class PanelCompletion extends AbstractSpecificPanel {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(chk_espace)
-                        .addGap(18, 18, 18)
-                        .addComponent(chk_maj)
-                        .addGap(18, 18, 18)
-                        .addComponent(chk_accent))
-                    .addComponent(jLabel1)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(chk_espace)
+                                .addGap(18, 18, 18)
+                                .addComponent(chk_maj)
+                                .addGap(32, 32, 32)
+                                .addComponent(chk_accent))
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(chk_frappe)
+                                .addGap(18, 18, 18)
+                                .addComponent(chk_ortho)
+                                .addGap(18, 18, 18)
+                                .addComponent(chk_morph))
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(38, 38, 38)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(chk_frappe)
-                        .addGap(18, 18, 18)
-                        .addComponent(chk_ortho)
-                        .addGap(18, 18, 18)
-                        .addComponent(chk_morph))
-                    .addComponent(jLabel2))
+                        .addGap(167, 167, 167)
+                        .addComponent(jRadioButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(93, 93, 93)
+                    .addComponent(jRadioButton2)
+                    .addContainerGap(280, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(26, 26, 26)
+                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -124,7 +159,12 @@ public class PanelCompletion extends AbstractSpecificPanel {
                     .addComponent(chk_espace)
                     .addComponent(chk_maj)
                     .addComponent(chk_accent))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(76, 76, 76)
+                    .addComponent(jRadioButton2)
+                    .addContainerGap(205, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,6 +175,11 @@ public class PanelCompletion extends AbstractSpecificPanel {
     private void chk_espaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk_espaceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chk_espaceActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox chk_accent;
     private javax.swing.JCheckBox chk_espace;
@@ -142,8 +187,12 @@ public class PanelCompletion extends AbstractSpecificPanel {
     private javax.swing.JCheckBox chk_maj;
     private javax.swing.JCheckBox chk_morph;
     private javax.swing.JCheckBox chk_ortho;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
     }

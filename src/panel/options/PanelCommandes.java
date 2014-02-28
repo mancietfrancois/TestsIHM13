@@ -51,7 +51,6 @@ public class PanelCommandes extends AbstractSpecificPanel {
         tgl_vocale = new javax.swing.JToggleButton();
         jSeparator1 = new javax.swing.JSeparator();
 
-        jLabel1.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jLabel1.setText("Touches du clavier");
 
         jLabel2.setFont(new java.awt.Font("Myriad Pro", 0, 12)); // NOI18N
@@ -64,7 +63,6 @@ public class PanelCommandes extends AbstractSpecificPanel {
         jLabel3.setFont(new java.awt.Font("Myriad Pro", 0, 12)); // NOI18N
         jLabel3.setText("Effacer dernière lettre du mot complété :");
 
-        jLabel4.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
         jLabel4.setText("Commande vocale");
 
         tgl_vocale.setFont(new java.awt.Font("Myriad Pro", 0, 14)); // NOI18N
@@ -79,7 +77,7 @@ public class PanelCommandes extends AbstractSpecificPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(32, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -110,7 +108,7 @@ public class PanelCommandes extends AbstractSpecificPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_toucheDerniereLettre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
