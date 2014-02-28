@@ -1,15 +1,16 @@
 package panel.options;
 
-import java.awt.Color;
-import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JTabbedPane;
-import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 public class TabsParam extends JFrame {
 
@@ -20,9 +21,11 @@ public class TabsParam extends JFrame {
         ImageIcon icon = new ImageIcon("U:\\cadis.gif");
         ImageIcon tabIcon = new ImageIcon("U:\\tab_icon.gif");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        String[] nomParams = new String[]{"Général", "Barre d'outils", "Claviers & clis",
+        String[] nomParams = new String[]{"Général", "Barre d'outils", "Claviers & clics",
             "Commandes VITIPI", "Complétion", "Dictionnaires", "Feedbacks", "Profils"};
-        Param[] params = new Param[]{new panelGeneral(), new panelToolBar(), new panelKeyboard(), new panelCommandes(), new panelCompletion(), new panelDicos(), new panelFeedbacks(), new panelProfil()};
+
+        AbstractSpecificPanel[] params = new AbstractSpecificPanel[]{new PanelGeneral("Général"), new PanelToolBar("Barre d'outils"), new PanelKeyboard("Claviers & clics"), new PanelCommandes("Commandes VITIPI"), new PanelCompletion("Complétion"), new PanelDicos("Dictionnaires"), new PanelFeedbacks("Feedbacks"), new PanelProfil("Profils")};
+
 
         int i = 0;
         for (String s : nomParams) {
@@ -51,7 +54,7 @@ public class TabsParam extends JFrame {
          panel.setLayout(new GridLayout(1, 1));
          panel.add(filler);
          */
-        return new panelToolBar();
+        return new PanelToolBar("Barre d'outils");
     }
 
     /**
@@ -79,23 +82,21 @@ public class TabsParam extends JFrame {
         //Schedule a job for the event dispatch thread:
         //creating and showing this application's GUI.
         //Turn off metal's use of bold fonts
+//        SwingUtilities.invokeLater(new Runnable() {
+//            public void run() {
+                //Turn off metal's use of bold fonts
+                // My own font
+                Font myFont = new Font("Segoe UI Semibold", Font.PLAIN, 12);
 
-        try {
-            for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (Exception e) {
-            // If Nimbus is not available, you can set the GUI to another look and feel.
-        }
-
-        UIManager.put("Label.font", new Font("Segoe UI Semibold", Font.PLAIN, 13));
-        UIManager.put("Button.background", Color.WHITE);
-        UIManager.put("RadioButton.icon", new ImageIcon("./images/radioButton/radiobutton-unchecked.png"));
-        UIManager.put("CheckBox.icon", new ImageIcon("./images/checkbox/checkbox-empty_small2.png"));
-        UIManager.put("CheckBox[Selected].checkIcon", new ImageIcon("./images/checkbox/checkbox-ticked_small2.png"));
-        createAndShowGUI();
+                // Replacing global component fonts
+                UIManager.put("Button.font", myFont);
+                 UIManager.put("Checkbox.font", myFont);
+                 UIManager.put("RadioButton.font", myFont);
+                UIManager.put("Button.background", Color.white);
+                UIManager.put("ToggleButton.font", myFont);
+                UIManager.put("Label.font", myFont);
+                createAndShowGUI();
+//            }
+//        });
     }
 }

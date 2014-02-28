@@ -5,24 +5,30 @@
 package panel.options;
 
 import javax.swing.JPanel;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 /**
  *
  * @author legranma
  */
-public class panelCommandes extends Param {
+public class PanelCommandes extends AbstractSpecificPanel {
+    private static final long serialVersionUID = 1L;
 
+    public PanelCommandes(String title){
+        super(title);
+    }
     @Override
-    public JPanel personliserParams() {
-        setTitle("Paramètres de complétion");
+    protected JPanel generateSpecificPanel() {
         return new ParamsCommandes();
     }
+
+
 
     public class ParamsCommandes extends javax.swing.JPanel {
 
         /**
-         * Creates new form panelCommandes
-         */
+         * Creates new form panelCommandes */
+         
         public ParamsCommandes() {
             initComponents();
         }

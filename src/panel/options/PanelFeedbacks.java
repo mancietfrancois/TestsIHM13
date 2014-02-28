@@ -5,17 +5,22 @@
 package panel.options;
 
 import javax.swing.JPanel;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 /**
  *
  * @author legranma
  */
-public class panelFeedbacks extends Param {
+public class PanelFeedbacks extends AbstractSpecificPanel {
+
+   
+    public PanelFeedbacks(String title){
+          super(title);
+    }
 
     @Override
-    public JPanel personliserParams() {
-        setTitle("Feedbacks");
-        return new ParamsFeedbacks();
+    protected JPanel generateSpecificPanel() {
+          return new ParamsFeedbacks();
     }
 
     public class ParamsFeedbacks extends javax.swing.JPanel {

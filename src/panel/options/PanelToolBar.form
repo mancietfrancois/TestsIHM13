@@ -165,7 +165,7 @@
                       <Component id="lbl_lectureMot" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbl_lecturePhrase" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="42" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="74" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -185,9 +185,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_dico">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\legranma\Documents\NetBeansProjects\TestsIHM13\images\menu_discret\Vitipi_Dictionnaire.gif"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Dictionnaires"/>
           </Properties>
         </Component>

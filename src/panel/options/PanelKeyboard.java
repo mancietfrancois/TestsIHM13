@@ -5,18 +5,21 @@
 package panel.options;
 
 import javax.swing.JPanel;
+import panel.options.hand.design.AbstractSpecificPanel;
 
 /**
  *
  * @author legranma
  */
-public class panelKeyboard extends Param {
+public class PanelKeyboard extends AbstractSpecificPanel {
+    public PanelKeyboard(String title){
+        super(title);
+    }
 
     @Override
-    public JPanel personliserParams() {
-        setTitle("Mes claviers Virtuels");
+    protected JPanel generateSpecificPanel() {
         return new ParamsKeyboard();
-   }
+    }
 
     public class ParamsKeyboard extends javax.swing.JPanel {
 
