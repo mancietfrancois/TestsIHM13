@@ -19,7 +19,7 @@ public class PanelFeedbacks extends AbstractSpecificPanel {
 
     @Override
     protected JPanel generateSpecificPanel() {
-        return new ParamsFeedbacks();
+        return new panel.options.hand.design.ParamsFeedbacks();
     }
 
     public class ParamsFeedbacks extends javax.swing.JPanel {

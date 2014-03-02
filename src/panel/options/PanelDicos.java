@@ -19,7 +19,7 @@ public class PanelDicos extends AbstractSpecificPanel {
 
     @Override
     protected JPanel generateSpecificPanel() {
-        return new ParamsDicos();
+        return new panel.options.hand.design.ParamsDicos();
     }
 
     public class ParamsDicos extends javax.swing.JPanel {

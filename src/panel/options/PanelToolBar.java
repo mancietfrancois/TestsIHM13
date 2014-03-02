@@ -19,7 +19,7 @@ public class PanelToolBar extends AbstractSpecificPanel {
     }
     @Override
     protected JPanel generateSpecificPanel() {
-         return new ParamsToolBar();
+         return new panel.options.hand.design.ParamsToolBar();
     }
 
 

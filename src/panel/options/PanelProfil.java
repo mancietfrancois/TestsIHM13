@@ -19,7 +19,7 @@ public class PanelProfil extends AbstractSpecificPanel {
 
     @Override
     protected JPanel generateSpecificPanel() {
-        return new ParamsProfil();
+        return new panel.options.hand.design.ParamsProfil();
     }
 
     public class ParamsProfil extends javax.swing.JPanel {

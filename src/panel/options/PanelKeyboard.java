@@ -19,7 +19,7 @@ public class PanelKeyboard extends AbstractSpecificPanel {
 
     @Override
     protected JPanel generateSpecificPanel() {
-        return new ParamsKeyboard();
+        return new panel.options.hand.design.ParamsKeyboard();
     }
 
     public class ParamsKeyboard extends javax.swing.JPanel {

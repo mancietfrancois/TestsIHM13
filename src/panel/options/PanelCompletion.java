@@ -19,7 +19,7 @@ public class PanelCompletion extends AbstractSpecificPanel {
 
     @Override
     protected JPanel generateSpecificPanel() {
-        return new ParamsCompletion();
+        return new panel.options.hand.design.ParamsCompletion();
     }
 
     public class ParamsCompletion extends javax.swing.JPanel {

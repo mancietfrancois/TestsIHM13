@@ -21,7 +21,7 @@ public class PanelCommandes extends AbstractSpecificPanel {
 
     @Override
     protected JPanel generateSpecificPanel() {
-        return new ParamsCommandes();
+        return new panel.options.hand.design.ParamsCommandes();
     }
 
     public class ParamsCommandes extends javax.swing.JPanel {
