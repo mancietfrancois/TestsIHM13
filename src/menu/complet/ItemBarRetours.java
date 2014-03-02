@@ -20,7 +20,7 @@ public class ItemBarRetours extends ItemBar{
     
     public ItemBarRetours()
     {
-        title.setText("Relectures");
+        title.setText("Retours");
         colorPanel.setBackground(utils.Constantes.DEFAULT_FEEDBACK_COLOR);
         panelItem.setPreferredSize(new Dimension(200,100));
         ImageIcon icon_son = new ImageIcon(utils.Constantes.PATH_DIR_IMAGES+"Vitipi_Son_coupe.png");

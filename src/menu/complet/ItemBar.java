@@ -35,54 +35,78 @@ public class ItemBar extends JPanel {
     protected JLabel title;
     protected ArrayList<JComponent> items;
     protected JPanel colorPanel;
+    protected JPanel panelButtonParam;
     protected JButton buttonParam;
     protected JPanel panelItem;
     protected JPanel panelCenter;
 
-    public ItemBar() {        
-        setLayout(new BorderLayout());
-        //setBackground(new Color(0, 0, 0, 0));
-        JPanel panelTitre = new JPanel();
+    public ItemBar() {
 
-        JPanel panelButtonParam = new JPanel(new BorderLayout());
+
+        setLayout(new BorderLayout());
+        setBackground(new Color(0, 0, 0, 0));
+        JPanel panelTitre = new JPanel();
+        setOpaque(false);
+        panelButtonParam = new JPanel(new BorderLayout());
+        panelButtonParam.setOpaque(false);
 
         panelItem = new JPanel(new FlowLayout());
         panelCenter = new JPanel(new GridLayout());
 
         panelItem.setLayout(new BorderLayout());
         panelItem.setPreferredSize(new Dimension(100, 100));
+
         title = new JLabel("Titre");
         items = new ArrayList<>();
 
         colorPanel = new JPanel();
+
         buttonParam = new JButton("Parametre");
         buttonParam.setVisible(false);
+
         panelButtonParam.setPreferredSize(new Dimension(100, 30));
+        panelButtonParam.add(buttonParam, BorderLayout.CENTER);
 
         panelTitre.add(title);
-        panelTitre.setBackground(new Color(0, 0, 0, 0));
+
         panelItem.add(panelTitre, BorderLayout.PAGE_START);
         panelItem.add(panelCenter, BorderLayout.CENTER);
         panelItem.add(colorPanel, BorderLayout.PAGE_END);
 
-        panelButtonParam.add(buttonParam, BorderLayout.CENTER);
-        panelButtonParam.setBackground(new Color(0, 0, 0, 0));
-
         add(panelItem, BorderLayout.NORTH);
         add(panelButtonParam, BorderLayout.SOUTH);
 
+
+        panelTitre.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                //System.out.println("color Enter");
+                buttonParam.setVisible(false);
+            }
+        });
+        
+        colorPanel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                //System.out.println("color Enter");
+                buttonParam.setVisible(true);
+            }
+        });
+        
+        buttonParam.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                System.out.println("button Exit");
+                buttonParam.setVisible(false);
+            }
+        });
+        
         buttonParam.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 buttonParam.setVisible(false);
-            }
-        });
+                System.out.println("btn_param");
 
-        colorPanel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-                buttonParam.setVisible(true);
             }
         });
     }
@@ -101,6 +125,26 @@ public class ItemBar extends JPanel {
 
             panelCenter.add(j);
         }
+        items.get(0).addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if (e.getPoint().x <= -1) {
+                    System.out.println("Exit");
+                    buttonParam.setVisible(false);
+                }
+            }
+        });
+
+        items.get(items.size()-1).addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                if (e.getPoint().x >= 100) {
+                    System.out.println("Exit");
+                    buttonParam.setVisible(false);
+
+                    System.out.println(e.getPoint().x);
+                }
+            }
+        });
     }
-    
 }

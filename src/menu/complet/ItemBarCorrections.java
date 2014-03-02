@@ -5,6 +5,8 @@
 package menu.complet;
 
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -32,6 +34,8 @@ public class ItemBarCorrections extends ItemBar {
         items.add(btn_micro);
         
         addCompCenter();
+        
+         
         
     }
 }
