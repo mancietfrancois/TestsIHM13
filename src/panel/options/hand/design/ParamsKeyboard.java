@@ -5,71 +5,81 @@
 package panel.options.hand.design;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.border.TitledBorder;
+
 
 /**
  *
  * @author cantual
  */
-public class ParamsKeyboard extends JPanel{
+public class ParamsKeyboard extends JPanel {
     
     public ParamsKeyboard() {
         
         // ------------- Instenciations des éléments graphiques ----------------
         
         // Panel 1 et contenu
-        JPanel panel1 = new JPanel();
-        panel1.setBorder(new EmptyBorder(10, 10, 10, 10) );
-        
-        scrollPane = new JScrollPane();
+        ListItem panelList = new ListItem(true, false, true);
 
         // Panel 2 et contenu
-        JPanel panel2 = new JPanel();
-        panel2.setBorder(new EmptyBorder(10, 10, 10, 10) );
+        JPanel clicAuto = new JPanel();
         
-        btnAdd = new JButton("Ajouter");
-        btnSuppr = new JButton("Supprimer");
+        button = new JToggleButton("ON");
+        moins = new JButton("-");
+        moins.setEnabled(false);
+        duree = new JTextField("0");
+        duree.setEnabled(false);
+        plus = new JButton("+");
+        plus.setEnabled(false);
+        seconde = new JLabel(" seconde");
         
-        // Définition des attributs des éléments (à revoir)
-        btnAdd.setPreferredSize(new Dimension(100, 25));
-        btnSuppr.setPreferredSize(new Dimension(100, 25));
-        
-        btnAdd.setMaximumSize(new Dimension(100, 25));
-        btnSuppr.setMaximumSize(new Dimension(100, 25));
-        
-        btnAdd.setMinimumSize(new Dimension(100, 25));
-        btnSuppr.setMinimumSize(new Dimension(100, 25));
+        // Mise en place des titres    (respecter guideline soit, juste un trait)  ---!!
+        TitledBorder title;
+        title = BorderFactory.createTitledBorder("Clic automatique");
+        clicAuto.setBorder(title);
         
         // ------------- Attribution des layouts -------------------------------
         
-        // Layout principal : Border Layout
-        this.setLayout(new BorderLayout());
-
-        // Layout associé au boutons : BoxLayout 
-        BoxLayout btnsLayout = new BoxLayout(panel2, BoxLayout.Y_AXIS);
-        panel2.setLayout(btnsLayout);
+        // Layout principal : Grid Layout
+        BorderLayout layout = new BorderLayout();
+        this.setLayout(layout);
+        
+        // Layout du panel2 : Box Layout
+        BoxLayout clicAutoLayout = new BoxLayout(clicAuto, BoxLayout.X_AXIS);
+        clicAuto.setLayout(clicAutoLayout);
         
         // ---------------- Association des éléments graphiques ----------------
         
-        this.add(panel1, BorderLayout.CENTER);
-            panel1.add(scrollPane);
-        this.add(panel2, BorderLayout.EAST);
-            panel2.setPreferredSize(new Dimension (100, 0));
-            panel2.add(btnAdd);
-            panel2.add(btnSuppr);
+        this.add(panelList, BorderLayout.CENTER);
+        this.add(clicAuto, BorderLayout.SOUTH);
+            clicAuto.add(button);
+            clicAuto.add(Box.createHorizontalGlue());
+            clicAuto.add(moins);
+            clicAuto.add(duree);
+            clicAuto.add(plus);
+            clicAuto.add(seconde);
     }
     
-    private JScrollPane scrollPane;
-    private JButton btnAdd;
-    private JButton btnSuppr;
+    @Override
+    public Insets getInsets() {
+      return new Insets(10,10,10,10);
+    }
     
-    //respect de la guideline Windows : http://msdn.microsoft.com/en-us/library/windows/desktop/aa511279.aspx
-    // ou de moins tentative
+    JToggleButton button;
+    JButton moins;
+    JTextField duree;
+    JButton plus;
+    JLabel seconde;
 }
 
 

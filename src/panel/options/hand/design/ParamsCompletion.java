@@ -5,6 +5,7 @@
 package panel.options.hand.design;
 
 import java.awt.GridLayout;
+import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
@@ -37,6 +38,7 @@ public class ParamsCompletion extends JPanel{
         frappes = new JCheckBox("Frappes");
         orthographe = new JCheckBox("Orthographe");
         morphologie = new JCheckBox("Morphologie");
+        
         // Panel 3 et contenu
         JPanel panel3 = new JPanel();
         
@@ -87,6 +89,11 @@ public class ParamsCompletion extends JPanel{
             panel3.add(espaces);
             panel3.add(majuscules);
             panel3.add(accents);
+    }
+    
+    @Override
+    public Insets getInsets() {
+      return new Insets(10,10,10,10);
     }
     
     private JComboBox comboBox;
