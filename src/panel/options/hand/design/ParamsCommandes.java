@@ -6,19 +6,21 @@ package panel.options.hand.design;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 import javax.swing.border.TitledBorder;
-import panel.options.hand.design.utils.TitledSeparator;
 
 /**
  *
@@ -39,7 +41,7 @@ public class ParamsCommandes extends JPanel{
         // Panel 2 et contenu
         JPanel panel2 = new JPanel();
         
-        button = new JButton("Off");
+        button = new JToggleButton("On");
         ligne3 = new Ligne(new JLabel("Effacer mot complété :"), new JTextField("Suprimer"));
         ligne4 = new Ligne(new JLabel("Effacer dernière lettre du mot complété :"), new JTextField("Effacer"));
         
@@ -53,6 +55,43 @@ public class ParamsCommandes extends JPanel{
 
         title = BorderFactory.createTitledBorder("Commande vocale");
         panel2.setBorder(title);
+        
+        // ------------- Mise en place de listeners ----------------------------
+        
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                commandeVocaleMouseClicked();
+            }
+        });
+        
+        ligne1.textField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clicCompletionMotClavier();
+            }
+        });
+        
+        ligne2.textField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clicCompletionLettreClavier();
+            }
+        });
+        
+        ligne3.textField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clicCompletionMotVocale();
+            }
+        });
+        
+        ligne4.textField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clicCompletionLettreVocale();
+            }
+        });
         
         // ------------- Attribution des layouts -------------------------------
         
@@ -89,6 +128,8 @@ public class ParamsCommandes extends JPanel{
     public class Ligne extends JPanel{
     
         public Ligne(JLabel label, JTextField textField) {
+            
+            this.textField = textField;
 
             BorderLayout layout = new BorderLayout();
             this.setLayout(layout);
@@ -104,13 +145,70 @@ public class ParamsCommandes extends JPanel{
         public Insets getInsets() {
           return new Insets(10,10,10,10);
         }
+        
+        // Attributs
+        JTextField textField;
+
+        private void addActionListener(ActionListener actionListener) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     }
+    
+    // ----------------- Accesseurs ------------------------
+    public String getCompletionMotClavier() {
+        return ligne1.textField.getText();
+    }
+    public String getCompletionLettreClavier() {
+        return ligne2.textField.getText();
+    }
+    public String getCompletionMotVocale() {
+        return ligne3.textField.getText();
+    }
+    public String getCompletionLettreVocale() {
+        return ligne4.textField.getText();
+    }
+    
+    public void setCompletionMotClavier(String s) {
+        ligne1.textField.setText(s);
+    }
+    public void setCompletionLettreClavier(String s) {
+        ligne2.textField.setText(s);
+    }
+    public void setCompletionMotVocale(String s) {
+        ligne3.textField.setText(s);
+    }
+    public void setCompletionLettreVocale(String s) {
+        ligne4.textField.setText(s);
+    }
+    
+    public boolean commVocaleIsOn() {
+        return button.isSelected();
+    }
+    public void setCommVocale(boolean c) {
+        button.setSelected(c);
+    }
+    
+    // -------------------- Events -------------------------
+    
+    public void commandeVocaleMouseClicked() {
+        setCommVocale(commVocaleIsOn());
+    }
+    public void clicCompletionMotClavier() {
+    }
+    public void clicCompletionLettreClavier() {
+    }
+    public void clicCompletionMotVocale() {
+    }
+    public void clicCompletionLettreVocale() {
+    }
+    
+    // ----------------- Attributs ---------------------------
     
     private Ligne ligne1;
     private Ligne ligne2;
     private Ligne ligne3;
     private Ligne ligne4;
-    private JButton button;
+    private JToggleButton button;
     
     //respect de la guideline Windows : http://msdn.microsoft.com/en-us/library/windows/desktop/aa511279.aspx
     // ou de moins tentative

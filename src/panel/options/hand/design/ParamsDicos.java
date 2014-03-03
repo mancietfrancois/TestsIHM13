@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 public class ParamsDicos extends JPanel {
     
     public ParamsDicos() {
-        ListItem panelList = new ListItem(true, true, true);
+        panelList = new ListItem(true, true, true);
         
         GridLayout layout = new GridLayout();
         this.setLayout(layout);
@@ -27,4 +27,31 @@ public class ParamsDicos extends JPanel {
     public Insets getInsets() {
       return new Insets(10,10,10,10);
     }
+    
+    // ----------------- Accesseurs ------------------------
+    public String getItemSelected() {
+        return panelList.getItemSelected();
+    }
+    
+    public void setItems(String[] data) {
+        panelList.setItems(data);
+    }
+
+    // -------------------- Events -------------------------
+    
+    public void btnAddMouseClicked() { 
+        panelList.btnAddMouseClicked();
+    }
+    public void btnCreateMouseClicked() { 
+        panelList.btnCreateMouseClicked();
+    }
+    public void btnSupprMouseClicked() { 
+        panelList.btnSupprMouseClicked();
+    }
+    public void itemSelected(int i) { 
+        panelList.itemSelected(i);
+    }
+    
+    // ----------------- Attributs ---------------------------
+    ListItem panelList;
 }

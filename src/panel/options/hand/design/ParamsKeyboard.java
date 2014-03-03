@@ -7,6 +7,10 @@ package panel.options.hand.design;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -16,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.border.TitledBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 
 /**
@@ -29,7 +35,7 @@ public class ParamsKeyboard extends JPanel {
         // ------------- Instenciations des éléments graphiques ----------------
         
         // Panel 1 et contenu
-        ListItem panelList = new ListItem(true, false, true);
+        panelList = new ListItem(true, false, true);
 
         // Panel 2 et contenu
         JPanel clicAuto = new JPanel();
@@ -47,6 +53,29 @@ public class ParamsKeyboard extends JPanel {
         TitledBorder title;
         title = BorderFactory.createTitledBorder("Clic automatique");
         clicAuto.setBorder(title);
+        
+        // ------------- Mise en place de listeners ----------------------------
+        
+        moins.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                moinsMouseClicked();
+            }
+        });
+        
+        plus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                plusMouseClicked();
+            }
+        });
+        
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clicAutoClicked();
+            }
+        });
         
         // ------------- Attribution des layouts -------------------------------
         
@@ -75,6 +104,62 @@ public class ParamsKeyboard extends JPanel {
       return new Insets(10,10,10,10);
     }
     
+    // ----------------- Accesseurs ------------------------
+    
+    public String getItemSelected() {
+        return panelList.getItemSelected();
+    }
+    public void setItems(String[] data) {
+        panelList.setItems(data);
+    }
+    public int getDuree() {
+        return Integer.valueOf(duree.getText());
+    }
+    public void setDuree(int d) {
+        duree.setText(String.valueOf(d));
+    }
+    public boolean clicAutoIsOn() {
+        return button.isSelected();
+    }
+    public void setClicAuto(boolean c) {
+        button.setSelected(c);
+        moins.setEnabled(c);
+        duree.setEnabled(c);
+        plus.setEnabled(c);
+        // pas de update
+        button.revalidate();
+        moins.revalidate();
+        duree.revalidate();
+        plus.revalidate();
+    }
+
+    // -------------------- Events -------------------------
+    
+    public void btnAddMouseClicked() { 
+        panelList.btnAddMouseClicked();
+    }
+    public void btnCreateMouseClicked() { 
+        panelList.btnCreateMouseClicked();
+    }
+    public void btnSupprMouseClicked() { 
+        panelList.btnSupprMouseClicked();
+    }
+    public void itemSelected(int i) { 
+        panelList.itemSelected(i);
+    }
+    public void moinsMouseClicked() {
+        if(getDuree() > 0)
+            setDuree(getDuree()-1);
+    }
+    public void plusMouseClicked() {
+        setDuree(getDuree()+1);
+    }
+    public void clicAutoClicked() {
+        setClicAuto(clicAutoIsOn());
+    }
+    
+    // ----------------- Attributs ---------------------------
+    ListItem panelList;
     JToggleButton button;
     JButton moins;
     JTextField duree;

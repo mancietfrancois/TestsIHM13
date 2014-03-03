@@ -4,6 +4,7 @@
  */
 package panel.options.hand.design;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import javax.swing.BorderFactory;
@@ -96,7 +97,7 @@ public class ParamsFeedbacks extends JPanel{
         panelAudio.setLayout(panelAudioLayout);
         
         // Layout associé au panelVisuel : BoxLayout 
-        BoxLayout panelVisuelLayout = new BoxLayout(panelVisuel, BoxLayout.Y_AXIS);
+        BorderLayout panelVisuelLayout = new BorderLayout();
         panelVisuel.setLayout(panelVisuelLayout);
         
         
@@ -117,14 +118,14 @@ public class ParamsFeedbacks extends JPanel{
                         panelParagraphe.add(rbParagraphe[i]);
                     }
             tabbedPane.addTab("Retour Visuel", panelVisuel);
-                panelVisuel.add(panelPolice);
+                panelVisuel.add(panelPolice, BorderLayout.CENTER);
                     panelPolice.add(automatique);
                     panelPolice.add(police);
                     panelPolice.add(size);
                     panelPolice.add(gras);
                     panelPolice.add(italique);
                     panelPolice.add(souligne);
-                panelVisuel.add(panelApercu);
+                panelVisuel.add(panelApercu, BorderLayout.SOUTH);
                     panelApercu.add(apercu);
                         
     }
@@ -132,6 +133,28 @@ public class ParamsFeedbacks extends JPanel{
     @Override
     public Insets getInsets() {
       return new Insets(10,10,10,10);
+    }
+    
+    // ----------------------- Accesseur ------------------------
+    public void setRetourAudioLettre(int lettre) {
+    }
+    
+    public void setRetourAudioMot(int mot) {
+    }
+    
+    public void setRetourAudioParagraphe(int paragraphe) {
+    }
+    
+    public int getRetourAudioLettre() {
+        return 0;
+    }
+    
+    public int getRetourAudioMot() {
+        return 0;
+    }
+    
+    public int getRetourAudioParagraphe() {
+        return 0;
     }
     
     private JCheckBox automatique;
