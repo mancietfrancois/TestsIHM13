@@ -4,12 +4,9 @@
  */
 package panel.options.hand.design;
 
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -26,7 +23,7 @@ import javax.swing.border.TitledBorder;
  *
  * @author cantual
  */
-public class ParamsCompletion extends JPanel{
+public class ParamsCompletion extends MyPanel{
     
     public ParamsCompletion() {
         
@@ -35,15 +32,18 @@ public class ParamsCompletion extends JPanel{
         // Panel 1 et contenu
         JPanel panel1 = new JPanel();
         comboBox = new JComboBox(new String[]{"Français","Anglais"}); //régler la taille)                ---!!
+        setSize(comboBox);
         
         // Panel 2 et contenu
         JPanel panel2 = new JPanel();
         Box hBox1 = Box.createHorizontalBox();
         labelCarac = new JLabel("Caractères");
         spinnCarac = new JSpinner();
+        setSize(spinnCarac);
         Box hBox2 = Box.createHorizontalBox();
         labelMots = new JLabel("Mots");
         spinnMots = new JSpinner();
+        setSize(spinnMots);
         phrase = new JCheckBox("Phrase");
         
         // Panel 3 et contenu
@@ -140,11 +140,6 @@ public class ParamsCompletion extends JPanel{
             panel5.add(espaces);
             panel5.add(majuscules);
             panel5.add(accents);
-    }
-    
-    @Override
-    public Insets getInsets() {
-      return new Insets(10,10,10,10);
     }
     
     // ----------------- Accesseurs ------------------------

@@ -10,12 +10,9 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -26,7 +23,7 @@ import javax.swing.border.TitledBorder;
  *
  * @author cantual
  */
-public class ParamsCommandes extends JPanel{
+public class ParamsCommandes extends MyPanel{
     
     public ParamsCommandes() {
         
@@ -36,17 +33,19 @@ public class ParamsCommandes extends JPanel{
         JPanel panel1 = new JPanel();
         
         ligne1 = new Ligne(new JLabel("Effacer mot complété :"), new JTextField("F5"));
+        setSize(ligne1);
         ligne2 = new Ligne(new JLabel("Effacer dernière lettre du mot complété :"), new JTextField("F8"));
+        setSize(ligne2);
 
         // Panel 2 et contenu
         JPanel panel2 = new JPanel();
         
         button = new JToggleButton("On");
+        setSize(button);
         ligne3 = new Ligne(new JLabel("Effacer mot complété :"), new JTextField("Suprimer"));
+        setSize(ligne3);
         ligne4 = new Ligne(new JLabel("Effacer dernière lettre du mot complété :"), new JTextField("Effacer"));
-        
-        // Panel 3 : panel tampon
-        //JPanel panel3 = new JPanel();
+        setSize(ligne4);
 
         // Mise en place des titres    (respecter guideline soit, juste un trait)  ---!!
         TitledBorder title;
@@ -95,16 +94,16 @@ public class ParamsCommandes extends JPanel{
         
         // ------------- Attribution des layouts -------------------------------
         
-        // Layout principal : BoxLayout
-        BoxLayout mainLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
+        // Layout principal : GridLayout
+        GridLayout mainLayout = new GridLayout(2,1);
         this.setLayout(mainLayout);
         
-        // Layout du panel1 : GridLayout
-        GridLayout panel1Layout = new GridLayout(2,1);
+        // Layout du panel1 : BoxLayout
+        BoxLayout panel1Layout = new BoxLayout(panel1, BoxLayout.Y_AXIS);
         panel1.setLayout(panel1Layout);
         
-        // Layout du panel2 : GridLayout
-        GridLayout panel2Layout = new GridLayout(3,1);
+        // Layout du panel2 : BoxLayout
+        BoxLayout panel2Layout = new BoxLayout(panel2, BoxLayout.Y_AXIS);
         panel2.setLayout(panel2Layout);
         
         // ---------------- Association des éléments graphiques ----------------
@@ -113,45 +112,26 @@ public class ParamsCommandes extends JPanel{
             panel1.add(ligne1);
             panel1.add(ligne2);
         this.add(panel2);
-            button.setAlignmentX(Component.RIGHT_ALIGNMENT);
             panel2.add(button);
             panel2.add(ligne3);
             panel2.add(ligne4);
-        this.add(Box.createGlue());
     }
     
-    @Override
-    public Insets getInsets() {
-      return new Insets(10,10,10,10);
-    }
-    
-    public class Ligne extends JPanel{
+    public class Ligne extends Box{
     
         public Ligne(JLabel label, JTextField textField) {
+            super(BoxLayout.X_AXIS);
             
             this.textField = textField;
 
-            BorderLayout layout = new BorderLayout();
-            this.setLayout(layout);
-            
-            // se débrouiller pour que la haute ne change pas ---!!!!!!!!!
-                    
-            this.add(label, BorderLayout.WEST);
-            this.add(textField, BorderLayout.EAST);
+            this.add(label);
+            this.add(Box.createGlue());
+            this.add(textField);
 
-        }
-        
-        @Override
-        public Insets getInsets() {
-          return new Insets(10,10,10,10);
         }
         
         // Attributs
         JTextField textField;
-
-        private void addActionListener(ActionListener actionListener) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
     }
     
     // ----------------- Accesseurs ------------------------

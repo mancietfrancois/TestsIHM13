@@ -19,7 +19,7 @@ public class PanelGeneral extends AbstractSpecificPanel {
 
     @Override
     protected JPanel generateSpecificPanel() {
-        return new ParamsGeneral();
+        return new panel.options.hand.design.ParamsGeneral();
     }
 
     public class ParamsGeneral extends javax.swing.JPanel {
