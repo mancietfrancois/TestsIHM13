@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package panel.options.hand.design;
+package panel.options;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

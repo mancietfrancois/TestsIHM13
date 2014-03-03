@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package panel.options.hand.design;
+package panel.options;
 
 import java.awt.GridLayout;
 import java.awt.Insets;
@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSpinner;
 import javax.swing.border.TitledBorder;
+import panel.options.hand.design.MyPanel;
 
 /**
  *

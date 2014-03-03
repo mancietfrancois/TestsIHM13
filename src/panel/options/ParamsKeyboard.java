@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package panel.options.hand.design;
+package panel.options;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -22,6 +22,7 @@ import javax.swing.JToggleButton;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import panel.options.hand.design.ListItem;
 
 
 /**

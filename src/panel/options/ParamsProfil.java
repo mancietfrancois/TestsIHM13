@@ -2,19 +2,21 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package panel.options.hand.design;
+package panel.options;
 
 import java.awt.GridLayout;
 import java.awt.Insets;
 import javax.swing.JPanel;
+import panel.options.hand.design.ListItem;
 
 /**
  *
  * @author cantual
  */
-public class ParamsDicos extends JPanel {
+public class ParamsProfil extends JPanel {
     
-    public ParamsDicos() {
+    public ParamsProfil() {
+        
         panelList = new ListItem(true, true, true);
         
         GridLayout layout = new GridLayout();
