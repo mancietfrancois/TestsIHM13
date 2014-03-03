@@ -2,9 +2,7 @@ package panel.options;
 
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;

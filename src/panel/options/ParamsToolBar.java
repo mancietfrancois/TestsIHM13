@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package panel.options.hand.design;
+package panel.options;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -17,9 +17,9 @@ import javax.swing.border.EmptyBorder;
  *
  * @author cantual
  */
-public class ParamsDicos extends JPanel{
+public class ParamsToolBar extends JPanel{
     
-    public ParamsDicos() {
+    public ParamsToolBar() {
         
         // ------------- Instenciations des éléments graphiques ----------------
         
@@ -55,7 +55,7 @@ public class ParamsDicos extends JPanel{
         // Layout principal : Border Layout
         this.setLayout(new BorderLayout());
 
-        // Layout associé au boutons : BoxLayout 
+        // Layout associé au panel : BoxLayout 
         BoxLayout btnsLayout = new BoxLayout(panel2, BoxLayout.Y_AXIS);
         panel2.setLayout(btnsLayout);
         
@@ -78,5 +78,4 @@ public class ParamsDicos extends JPanel{
     //respect de la guideline Windows : http://msdn.microsoft.com/en-us/library/windows/desktop/aa511279.aspx
     // ou de moins tentative
 }
-
 
