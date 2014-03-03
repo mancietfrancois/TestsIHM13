@@ -14,13 +14,13 @@ import javax.swing.JButton;
  *
  * @author legranma
  */
-public class ItemBarCorrections extends ItemBar {
+public class ItemBarCommandes extends ItemBar {
 
     private JButton btn_gomme;
     private JButton btn_micro;
     
-    public ItemBarCorrections() {
-        title.setText("Corrections");
+    public ItemBarCommandes() {
+        title.setText("Commandes");
         panelItem.setPreferredSize(new Dimension(200, 100));
         ImageIcon icon_gomme = new ImageIcon(utils.Constantes.PATH_DIR_IMAGES_BARRE+"Vitipi_Gomme.gif");
         ImageIcon icon_micro = new ImageIcon(utils.Constantes.PATH_DIR_IMAGES_BARRE+"Vitipi_Micro.png");

@@ -17,17 +17,25 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.KeyboardFocusManager;
 import java.awt.Paint;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.AWTEventListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
 /**
@@ -37,6 +45,7 @@ import javax.swing.SwingUtilities;
 public class TestBar extends JFrame {
 
     private ItemBar[] itemsBar;
+    PropertyChangeSupport support = new PropertyChangeSupport(this);
 
     public TestBar() {
         super("GradientTranslucentWindow");
@@ -45,9 +54,24 @@ public class TestBar extends JFrame {
         setSize(1500, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        ItemBar tableau[] = {new ItemBarDico(), new ItemBarClaviers(), new ItemBarCorrections(),
+        Set forwardKeys = getFocusTraversalKeys(
+                KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS);
+        Set newForwardKeys = new HashSet(forwardKeys);
+        newForwardKeys.add(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0));
+        setFocusTraversalKeys(KeyboardFocusManager.FORWARD_TRAVERSAL_KEYS,
+                newForwardKeys);
+
+        Set backwardKeys = getFocusTraversalKeys(
+                KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS);
+        Set newBackwardKeys = new HashSet(backwardKeys);
+        newBackwardKeys.add(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0));
+        setFocusTraversalKeys(KeyboardFocusManager.BACKWARD_TRAVERSAL_KEYS,
+                newBackwardKeys);
+
+        ItemBar tableau[] = {new ItemBarDico(), new ItemBarClaviers(), new ItemBarCommandes(),
             new ItemBarRelecture(), new ItemBarRetours(), new ItemBarStop(), new ItemBarProfil(),
             new ItemBarOutils()};
+
 
         itemsBar = tableau;
 
@@ -65,8 +89,26 @@ public class TestBar extends JFrame {
         add(buttons);
 
         for (int i = 0; i < itemsBar.length; i++) {
+
             buttons.add(itemsBar[i], gbc);
             gbc.gridx++;
+
+
+            itemsBar[i].addPropertyChangeListener("changeFocus", new PropertyChangeListener() {
+                @Override
+                public void propertyChange(PropertyChangeEvent evt) {
+
+                    for (int i = 0; i < itemsBar.length; i++) {
+                        String title = (String) evt.getNewValue();
+                        System.out.println(title);
+                        if (!title.equals(itemsBar[i].title.getText())) {
+                            itemsBar[i].buttonParam.setVisible(false);
+                            System.out.println(itemsBar[i].title.getText());
+                        }
+                    }
+                }
+            });
+
 
         }
 

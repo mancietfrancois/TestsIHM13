@@ -33,5 +33,14 @@ public class ItemBarDico extends ItemBar {
 
         addCompCenter();
 
+        lbl_dico.addActionListener(new ActionListener()
+        {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                lbl_dico.setFocusable(false);
+            }
+            
+        });
     }
 }
