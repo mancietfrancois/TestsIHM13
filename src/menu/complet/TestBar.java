@@ -93,7 +93,6 @@ public class TestBar extends JFrame {
             buttons.add(itemsBar[i], gbc);
             gbc.gridx++;
 
-
             itemsBar[i].addPropertyChangeListener("changeFocus", new PropertyChangeListener() {
                 @Override
                 public void propertyChange(PropertyChangeEvent evt) {
@@ -108,12 +107,9 @@ public class TestBar extends JFrame {
                     }
                 }
             });
-
-
         }
-
-
+        
         buttons.setVisible(true);
-
+        //itemsBar[0].title.requestFocusInWindow();
     }
 }

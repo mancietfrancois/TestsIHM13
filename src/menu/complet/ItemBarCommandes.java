@@ -21,7 +21,8 @@ public class ItemBarCommandes extends ItemBar {
     
     public ItemBarCommandes() {
         title.setText("Commandes");
-        panelItem.setPreferredSize(new Dimension(200, 100));
+        widthItem = 200;
+        panelItem.setPreferredSize(new Dimension(widthItem,heighItem));
         ImageIcon icon_gomme = new ImageIcon(utils.Constantes.PATH_DIR_IMAGES_BARRE+"Vitipi_Gomme.gif");
         ImageIcon icon_micro = new ImageIcon(utils.Constantes.PATH_DIR_IMAGES_BARRE+"Vitipi_Micro.png");
 

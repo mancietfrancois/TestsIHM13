@@ -21,8 +21,9 @@ public class ItemBarRetours extends ItemBar{
     public ItemBarRetours()
     {
         title.setText("Retours");
+        widthItem = 200;
         colorPanel.setBackground(utils.Constantes.DEFAULT_FEEDBACK_COLOR);
-        panelItem.setPreferredSize(new Dimension(200,100));
+        panelItem.setPreferredSize(new Dimension(widthItem,heighItem));
         ImageIcon icon_son = new ImageIcon(utils.Constantes.PATH_DIR_IMAGES+"Vitipi_Son_coupe.png");
         
         btn_son = new JButton(resize(icon_son));

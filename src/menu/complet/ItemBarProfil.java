@@ -20,7 +20,9 @@ public class ItemBarProfil extends ItemBar {
 
     public ItemBarProfil() {
         title.setText("Profil");
-        panelItem.setPreferredSize(new Dimension(200, 100));
+        
+        widthItem = 200;
+        panelItem.setPreferredSize(new Dimension(widthItem,heighItem));
 
         colorPanel.setBackground(utils.Constantes.DEFAULT_PROFILE_COLOR);
         ImageIcon ico_save = new ImageIcon(utils.Constantes.PATH_DIR_IMAGES+"Vitipi_Enregistrer.png");

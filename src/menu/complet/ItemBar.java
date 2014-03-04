@@ -48,6 +48,8 @@ public class ItemBar extends JPanel {
     protected JPanel panelItem;
     protected JPanel panelCenter;
     private PropertyChangeSupport support;
+    protected int widthItem = 100;
+    protected int heighItem = 100;
 
     public ItemBar() {
 
@@ -67,7 +69,7 @@ public class ItemBar extends JPanel {
         panelCenter = new JPanel(new GridLayout());
 
         panelItem.setLayout(new BorderLayout());
-        panelItem.setPreferredSize(new Dimension(100, 100));
+        panelItem.setPreferredSize(new Dimension(widthItem, heighItem));
 
         title = new JLabel("Titre");
         items = new ArrayList<>();
@@ -82,6 +84,7 @@ public class ItemBar extends JPanel {
 
         panelTitre.add(title);
 
+        
         panelItem.add(panelTitre, BorderLayout.PAGE_START);
         panelItem.add(panelCenter, BorderLayout.CENTER);
         panelItem.add(colorPanel, BorderLayout.PAGE_END);
@@ -89,6 +92,7 @@ public class ItemBar extends JPanel {
         add(panelItem, BorderLayout.NORTH);
         add(panelButtonParam, BorderLayout.SOUTH);
 
+        
         /**
          * ******* Ajoute les Listener *******
          */
@@ -106,6 +110,7 @@ public class ItemBar extends JPanel {
         panelTitre.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseExited(MouseEvent e) {
+                title.requestFocusInWindow();
                 buttonParam.setVisible(false);
             }
         });
@@ -114,8 +119,9 @@ public class ItemBar extends JPanel {
         buttonParam.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseExited(MouseEvent e) {
-                if (e.getPoint().y > buttonParam.getHeight() ||
-                        e.getPoint().x < 0 || e.getPoint().x > getWidth()) {
+                if (e.getPoint().y > buttonParam.getHeight()
+                        || e.getPoint().x < 0 || e.getPoint().x > getWidth()) {
+                    title.requestFocusInWindow();
                     buttonParam.setVisible(false);
                 }
             }
@@ -125,6 +131,7 @@ public class ItemBar extends JPanel {
         buttonParam.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                title.requestFocusInWindow();
                 buttonParam.setVisible(false);
             }
         });
@@ -135,6 +142,11 @@ public class ItemBar extends JPanel {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_UP) {
                     items.get(0).requestFocusInWindow();
+                    buttonParam.setVisible(false);
+                }
+
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    title.requestFocusInWindow();
                     buttonParam.setVisible(false);
                 }
             }
@@ -175,7 +187,7 @@ public class ItemBar extends JPanel {
             j.addFocusListener(new FocusAdapter() {
                 @Override
                 public void focusGained(FocusEvent e) {
-                     support.firePropertyChange("changeFocus", null, title.getText());
+                    support.firePropertyChange("changeFocus", null, title.getText());
                     buttonParam.setVisible(true);
                 }
             });
@@ -208,6 +220,7 @@ public class ItemBar extends JPanel {
             @Override
             public void mouseExited(MouseEvent e) {
                 if (e.getPoint().x <= -1) {
+                    title.requestFocusInWindow();
                     buttonParam.setVisible(false);
                 }
             }
@@ -219,8 +232,8 @@ public class ItemBar extends JPanel {
             @Override
             public void mouseExited(MouseEvent e) {
                 if (e.getPoint().x >= 100) {
+                    title.requestFocusInWindow();
                     buttonParam.setVisible(false);
-                    System.out.println(e.getPoint().x);
                 }
             }
         });
